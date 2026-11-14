@@ -4,822 +4,579 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="StartNL Web Studio creates modern, responsive websites for businesses and brands.">
+<title>StartNL Web Studio | Your Business. Our Website.</title>
 
-<title>StartNL Web Studio | Beyond Ordinary</title>
-
-<meta name="description" content="StartNL Web Studio creates modern, responsive websites for small businesses and growing brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #030713;
-  --blue: #168cff;
-  --cyan: #83e4ff;
-  --purple: #7654ff;
-  --white: #f5f8ff;
-  --muted: #a5b2c9;
-  --glass: rgba(16, 34, 65, .65);
+  --bg:#050914;
+  --panel:#0b1425;
+  --blue:#398cff;
+  --cyan:#61d9ff;
+  --white:#f6f9ff;
+  --muted:#9baac2;
+  --line:rgba(130,175,255,.16);
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:'DM Sans',sans-serif;line-height:1.7;
+  overflow-x:hidden;
 }
-
-html {
-  scroll-behavior: smooth;
+a{text-decoration:none;color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+.container{width:min(1160px,90%);margin:auto}
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:20;
+  background:rgba(5,9,20,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
 }
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
-  color: var(--white);
-  line-height: 1.6;
-  overflow-x: hidden;
+nav{
+  height:82px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:62px;height:62px;object-fit:contain;border-radius:12px}
+.brand-name{font-family:'Space Grotesk';font-size:21px;font-weight:700;line-height:1.15}
+.brand-name span{display:block;color:var(--cyan);font-size:10px;letter-spacing:3px;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:13px;color:#d5e1f5}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta,.primary-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 21px;border-radius:30px;
+  background:linear-gradient(110deg,#2676ef,#51c7ff);
+  color:white;font-weight:700;font-size:13px;
+  box-shadow:0 8px 30px rgba(45,133,255,.22);
+  transition:.3s;
 }
-
-/* GALAXY BACKGROUND */
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -3;
+.nav-cta:hover,.primary-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(45,133,255,.4)}
+.hero{
+  min-height:850px;position:relative;display:flex;
+  align-items:center;padding:140px 0 90px;
+  overflow:hidden;
   background:
-    radial-gradient(ellipse at 15% 15%, #102c62 0, transparent 38%),
-    radial-gradient(ellipse at 85% 45%, #17245d 0, transparent 35%),
-    radial-gradient(ellipse at 50% 100%, #071d39 0, transparent 45%),
-    #030713;
+    radial-gradient(ellipse at 75% 40%,rgba(22,83,170,.22),transparent 45%),
+    linear-gradient(135deg,#050914,#081326 65%,#050914);
 }
-
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -2;
-  opacity: .7;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(1px 1px at 90px 80px, #a8dcff, transparent),
-    radial-gradient(2px 2px at 160px 140px, #fff, transparent),
-    radial-gradient(1px 1px at 220px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 280px 180px, #8bcaff, transparent);
-  background-size: 320px 220px;
-  animation: starMove 35s linear infinite;
+#space{
+  position:absolute;inset:0;width:100%;height:100%;
+  z-index:0;pointer-events:none;
 }
-
-@keyframes starMove {
-  from { transform: translateY(0); }
-  to { transform: translateY(-220px); }
+.hero-grid{
+  position:relative;z-index:2;display:grid;
+  grid-template-columns:1fr 1fr;align-items:center;gap:35px;
 }
-
-/* NAVIGATION */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  padding: 17px 7%;
-  background: rgba(3, 7, 19, .85);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(120, 180, 255, .13);
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:8px 15px;border:1px solid rgba(87,171,255,.3);
+  border-radius:30px;color:#9bcaff;font-size:11px;
+  letter-spacing:2px;text-transform:uppercase;
+  background:rgba(20,62,116,.18);
 }
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.eyebrow:before{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:#5be0ff;box-shadow:0 0 12px #5be0ff;
 }
-
-.logo-text {
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: 1px;
+.hero h1{
+  font-family:'Space Grotesk';font-size:clamp(42px,5.5vw,70px);
+  line-height:1.08;letter-spacing:-2.8px;
+  margin:26px 0 20px;
 }
-
-.logo-text span {
-  color: var(--blue);
+.gradient-text{
+  background:linear-gradient(90deg,#62caff,#428aff,#b4a8ff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  font-size: 13px;
-  color: #c6d4e9;
+.hero-description{max-width:510px;color:var(--muted);font-size:16px}
+.hero-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:32px}
+.secondary-btn{
+  border:1px solid rgba(151,190,255,.35);
+  border-radius:30px;padding:12px 22px;
+  font-size:13px;font-weight:600;
+  transition:.3s;
 }
-
-.nav-links a {
-  transition: .3s;
+.secondary-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-note{color:#71849f;font-size:11px;margin-top:27px;letter-spacing:1px}
+.visual{
+  position:relative;height:530px;
+  display:flex;align-items:center;justify-content:center;
+  perspective:1000px;
 }
-
-.nav-links a:hover {
-  color: var(--cyan);
+.visual-glow{
+  position:absolute;width:350px;height:350px;border-radius:50%;
+  background:#1268e8;filter:blur(100px);opacity:.2;
 }
-
-/* HERO SECTION */
-
-.hero {
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 75px 7%;
-  position: relative;
-  overflow: hidden;
+.portal{
+  position:absolute;width:390px;height:390px;border-radius:50%;
+  border:1px solid rgba(91,177,255,.45);
+  box-shadow:0 0 45px rgba(36,133,255,.17),inset 0 0 35px rgba(36,133,255,.12);
+  animation:portal 12s linear infinite;
 }
-
-.hero-content {
-  max-width: 900px;
-  position: relative;
-  z-index: 2;
+.portal:before,.portal:after{
+  content:"";position:absolute;inset:20px;border-radius:50%;
+  border:1px dashed rgba(89,191,255,.5);
 }
-
-/* YOUR ACTUAL LOGO */
-
-.hero-logo {
-  width: 290px;
-  max-width: 75%;
-  height: auto;
-  display: block;
-  margin: 0 auto 35px;
-  border-radius: 18px;
-  background: white;
-  box-shadow:
-    0 0 35px rgba(72, 170, 255, .28),
-    0 0 90px rgba(70, 90, 255, .13);
-  animation: logoAppear 1.2s ease both;
+.portal:after{inset:48px;border-style:solid;opacity:.4}
+@keyframes portal{to{transform:rotate(360deg)}}
+.website-card{
+  position:relative;z-index:3;width:min(390px,90%);
+  padding:15px;border:1px solid rgba(133,187,255,.35);
+  background:linear-gradient(145deg,rgba(20,39,70,.94),rgba(7,14,29,.95));
+  border-radius:18px;box-shadow:0 25px 80px #0009;
+  transform:rotateY(-10deg) rotateX(5deg);
+  animation:float 6s ease-in-out infinite;
 }
-
-@keyframes logoAppear {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(.94);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+@keyframes float{50%{transform:translateY(-16px) rotateY(-5deg) rotateX(3deg)}}
+.browser-dots{display:flex;gap:5px;padding:5px 3px 12px}
+.browser-dots i{width:7px;height:7px;border-radius:50%;background:#5b83b9}
+.preview-screen{
+  height:225px;border-radius:10px;overflow:hidden;
+  background:linear-gradient(135deg,#123d79,#071326);
+  position:relative;padding:22px;
 }
-
-.eyebrow {
-  color: var(--cyan);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 11px;
-  margin-bottom: 20px;
+.preview-screen:before{
+  content:"";position:absolute;width:190px;height:190px;
+  border-radius:50%;right:-35px;top:30px;
+  background:radial-gradient(circle at 35% 30%,#b8edff,#3588ed 40%,#10265b 72%);
+  box-shadow:0 0 40px #308bff88;
 }
-
-h1 {
-  font-size: clamp(43px, 8vw, 88px);
-  line-height: 1.08;
-  letter-spacing: -3px;
-  margin-bottom: 24px;
+.preview-screen h3{position:relative;z-index:1;font-family:'Space Grotesk';font-size:22px;max-width:170px;line-height:1.2}
+.preview-screen p{position:relative;z-index:1;font-size:10px;color:#d1e3ff;margin-top:10px}
+.preview-button{position:relative;z-index:1;display:inline-block;margin-top:15px;background:#fff;color:#12305a;padding:6px 12px;border-radius:20px;font-size:9px;font-weight:bold}
+.preview-footer{display:flex;justify-content:space-between;padding:13px 3px 2px;color:#a7bbd9;font-size:10px}
+.float-chip{
+  position:absolute;z-index:4;padding:11px 15px;
+  border:1px solid rgba(112,185,255,.35);
+  background:rgba(9,24,47,.88);border-radius:12px;
+  color:#dcecff;font-size:11px;backdrop-filter:blur(10px);
+  box-shadow:0 12px 35px #0005;
 }
-
-.gradient-text {
-  background: linear-gradient(
-    100deg,
-    #ffffff,
-    #63baff,
-    #9b9cff,
-    #ffffff
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.chip-one{top:70px;right:0;animation:float 5s ease-in-out infinite}
+.chip-two{bottom:85px;left:0;animation:float 7s ease-in-out infinite reverse}
+section{padding:105px 0;position:relative}
+.section-heading{text-align:center;max-width:700px;margin:0 auto 55px}
+.kicker{color:var(--cyan);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.section-heading h2{font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);line-height:1.2;margin:13px 0}
+.section-heading p{color:var(--muted);font-size:14px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-visual{
+  min-height:330px;border:1px solid var(--line);border-radius:22px;
+  background:radial-gradient(circle at 50% 50%,#123b70,#091327 65%);
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
 }
-
-.hero-description {
-  color: var(--muted);
-  max-width: 630px;
-  margin: 0 auto 32px;
-  font-size: 17px;
+.about-visual img{width:190px;height:190px;object-fit:contain;border-radius:18px;position:relative;z-index:2;box-shadow:0 0 60px #328cff33}
+.about-visual:before,.about-visual:after{
+  content:"";position:absolute;width:270px;height:100px;
+  border:1px solid #4eafff66;border-radius:50%;transform:rotate(-25deg);
 }
-
-.actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+.about-visual:after{transform:rotate(35deg);width:310px}
+.about-copy h3{font-family:'Space Grotesk';font-size:30px;line-height:1.25;margin-bottom:18px}
+.about-copy p{color:var(--muted);font-size:14px;margin-bottom:15px}
+.services{background:linear-gradient(180deg,transparent,rgba(15,40,76,.25),transparent)}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{
+  padding:28px;border:1px solid var(--line);border-radius:17px;
+  background:linear-gradient(145deg,rgba(17,34,60,.8),rgba(7,14,28,.8));
+  transition:.3s;
 }
-
-.btn {
-  display: inline-block;
-  padding: 14px 27px;
-  border-radius: 40px;
-  font-weight: bold;
-  font-size: 13px;
-  transition: .3s;
+.service-card:hover{transform:translateY(-7px);border-color:#3c8de9;box-shadow:0 15px 40px #0004}
+.service-icon{
+  width:48px;height:48px;border-radius:14px;
+  display:grid;place-items:center;font-size:22px;
+  background:linear-gradient(135deg,#174d91,#10233f);
+  margin-bottom:20px;
 }
-
-.btn-primary {
-  color: #03101f;
-  background: linear-gradient(110deg, #69caff, #b0eaff);
-  box-shadow: 0 0 28px rgba(72, 170, 255, .3);
+.service-card h3{font-family:'Space Grotesk';font-size:19px;margin-bottom:10px}
+.service-card p{font-size:13px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.step{border-top:1px solid #3a77bd;padding-top:23px}
+.step-number{font-family:'Space Grotesk';font-size:34px;color:#55baff;font-weight:700}
+.step h3{font-size:18px;margin:12px 0 8px}
+.step p{font-size:13px;color:var(--muted)}
+.cta-panel{
+  text-align:center;padding:65px 30px;border:1px solid #28558c;
+  border-radius:24px;
+  background:radial-gradient(ellipse at 50% 0%,#174b86 0%,#0a1830 60%,#08101f 100%);
+  box-shadow:0 20px 80px #0004;
 }
-
-.btn-secondary {
-  color: white;
-  border: 1px solid rgba(135, 190, 255, .5);
+.cta-panel h2{font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);line-height:1.2}
+.cta-panel p{color:#b6c8e1;max-width:560px;margin:15px auto 25px;font-size:14px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:12px}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-brand{display:flex;align-items:center;gap:10px;color:white;font-weight:700}
+.footer-brand img{width:42px;height:42px;object-fit:contain;border-radius:8px}
+footer a:hover{color:var(--cyan)}
+@media(max-width:800px){
+  .nav-links{display:none}
+  .hero{min-height:auto;padding-top:130px}
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-content{text-align:center}
+  .hero-description{margin:auto}
+  .hero-actions{justify-content:center}
+  .visual{height:440px}
+  .portal{width:320px;height:320px}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{gap:30px}
 }
-
-.btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 35px rgba(72, 170, 255, .4);
+@media(max-width:520px){
+  nav{height:70px}
+  .brand img{width:49px;height:49px}
+  .brand-name{font-size:18px}
+  .nav-cta{padding:10px 14px;font-size:11px}
+  .hero h1{letter-spacing:-1.5px}
+  .visual{height:360px}
+  .portal{width:275px;height:275px}
+  .website-card{width:85%}
+  .preview-screen{height:185px}
+  .chip-one{right:-5px;top:30px}
+  .chip-two{left:-5px;bottom:30px}
+  section{padding:75px 0}
+  .service-grid,.steps{grid-template-columns:1fr}
+  .about-visual{min-height:260px}
+  .about-visual img{width:155px;height:155px}
 }
-
-/* ORBIT EFFECT */
-
-.orbit {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border: 1px solid rgba(100, 180, 255, .13);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  box-shadow:
-    0 0 90px rgba(50, 120, 255, .08),
-    inset 0 0 70px rgba(50, 120, 255, .06);
-}
-
-.orbit::before {
-  content: "";
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #8ce4ff;
-  border-radius: 50%;
-  top: 35px;
-  left: 90px;
-  box-shadow: 0 0 25px 8px #48aaff;
-}
-
-/* COMMON SECTIONS */
-
-section {
-  padding: 95px 7%;
-  position: relative;
-}
-
-.section-heading {
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto 50px;
-}
-
-.section-heading h2 {
-  font-size: clamp(30px, 5vw, 48px);
-  line-height: 1.2;
-  margin-bottom: 15px;
-}
-
-.section-heading p {
-  color: var(--muted);
-}
-
-/* ABOUT */
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.about-visual {
-  min-height: 340px;
-  border: 1px solid rgba(100, 180, 255, .2);
-  border-radius: 25px;
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 50% 50%, #164a83 0, #101d43 35%, #050b1b 75%);
-  box-shadow: inset 0 0 60px #398bff22, 0 0 50px #2477d522;
-  overflow: hidden;
-}
-
-.planet {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 30% 25%,
-    #c2eaff,
-    #3284c9 35%,
-    #102653 75%
-  );
-  box-shadow: 0 0 65px #4caaff88;
-  position: relative;
-}
-
-.planet::after {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 48px;
-  border: 3px solid #80cfff99;
-  border-radius: 50%;
-  left: -35px;
-  top: 48px;
-  transform: rotate(-20deg);
-}
-
-.about-copy h2 {
-  font-size: 38px;
-  line-height: 1.2;
-  margin-bottom: 22px;
-}
-
-.about-copy p {
-  color: var(--muted);
-  margin-bottom: 16px;
-}
-
-/* SERVICES */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-
-.card {
-  padding: 32px;
-  min-height: 220px;
-  border: 1px solid rgba(115, 175, 255, .17);
-  border-radius: 20px;
-  background: linear-gradient(
-    145deg,
-    rgba(23, 43, 79, .75),
-    rgba(7, 14, 31, .85)
-  );
-  transition: .35s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(100, 190, 255, .7);
-  box-shadow: 0 15px 45px rgba(29, 116, 220, .18);
-}
-
-.card-icon {
-  font-size: 30px;
-  color: var(--cyan);
-  margin-bottom: 18px;
-}
-
-.card h3 {
-  font-size: 19px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* PORTFOLIO */
-
-.portfolio-card {
-  max-width: 850px;
-  margin: auto;
-  padding: 40px;
-  text-align: center;
-  border-radius: 24px;
-  border: 1px solid rgba(115, 175, 255, .2);
-  background: linear-gradient(145deg, #101e3b, #070d1d);
-}
-
-.portfolio-screen {
-  max-width: 520px;
-  margin: 0 auto 25px;
-  padding: 30px 20px;
-  border-radius: 14px;
-  background: linear-gradient(130deg, #173c69, #10152f);
-  border: 1px solid #7acbff55;
-  box-shadow: 0 0 35px #368de522;
-}
-
-.portfolio-screen h3 {
-  font-size: 24px;
-  color: white;
-}
-
-.screen-lines {
-  height: 100px;
-  margin-top: 20px;
-  border-radius: 8px;
-  background:
-    linear-gradient(90deg, #5dbbff55 30%, transparent 30%),
-    linear-gradient(#8acfff22 12px, transparent 12px);
-  background-size: 100% 100%, 100% 28px;
-}
-
-.portfolio-card p {
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-/* CONTACT */
-
-.contact {
-  text-align: center;
-  background: radial-gradient(
-    ellipse at center,
-    #102b56 0,
-    transparent 68%
-  );
-}
-
-.contact h2 {
-  font-size: clamp(32px, 5vw, 54px);
-  line-height: 1.2;
-  margin-bottom: 18px;
-}
-
-.contact > p {
-  color: var(--muted);
-  margin-bottom: 30px;
-}
-
-.contact-details {
-  margin-top: 35px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  color: #c6d8ef;
-  font-size: 14px;
-}
-
-.contact-details a:hover {
-  color: var(--cyan);
-}
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 28px 7%;
-  color: #8495b1;
-  border-top: 1px solid rgba(120, 180, 255, .12);
-  font-size: 12px;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 760px) {
-  header {
-    padding: 15px 5%;
-  }
-
-  .nav-links {
-    gap: 13px;
-    font-size: 11px;
-  }
-
-  .hero {
-    min-height: 80vh;
-    padding: 65px 6%;
-  }
-
-  .hero-logo {
-    width: 245px;
-  }
-
-  .orbit {
-    width: 260px;
-    height: 260px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 75px 6%;
-  }
-
-  .about-copy h2 {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 430px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  h1 {
-    letter-spacing: -1.5px;
-  }
-
-  .hero-logo {
-    width: 220px;
-  }
-
-  .portfolio-card {
-    padding: 22px;
-  }
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 
 <body>
-
-<div class="stars"></div>
-
-<!-- NAVIGATION -->
-
 <header>
-  <nav>
-    <a class="logo-text" href="#home">Start<span>NL</span></a>
-
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  <div class="container">
+    <nav>
+      <a href="#home" class="brand">
+        <img src="logo.jpg.jpg" alt="StartNL Web Studio logo">
+        <div class="brand-name">StartNL<span>WEB STUDIO</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+      </div>
+      <a class="nav-cta" href="#contact">Let's Talk ↗</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-
-<!-- HERO / FIRST SCREEN -->
-
 <section class="hero" id="home">
-
-  <div class="orbit"></div>
-
-  <div class="hero-content">
-
-    <img
-      src="logo.jpg"
-      alt="StartNL Web Studio Logo"
-      class="hero-logo"
-    >
-
-    <div class="eyebrow">
-      A new digital universe begins here
+  <canvas id="space"></canvas>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="eyebrow">Creative digital experiences</div>
+      <h1>Your Business Deserves<br><span class="gradient-text">More Than Just a Page.</span></h1>
+      <p class="hero-description">
+        We create modern, responsive websites that help businesses build
+        their digital presence, connect with customers and move forward.
+      </p>
+      <div class="hero-actions">
+        <a class="primary-btn" href="#contact">Start Your Website ↗</a>
+        <a class="secondary-btn" href="#services">Explore Services</a>
+      </div>
+      <p class="hero-note">DESIGN · DIGITAL PRESENCE · NEW POSSIBILITIES</p>
     </div>
 
-    <h1>
-      Beyond ordinary.<br>
-      <span class="gradient-text">Built to stand out.</span>
-    </h1>
-
-    <p class="hero-description">
-      Your business deserves more than just a page.
-      We create modern, responsive websites that help
-      businesses build their presence and connect with people.
-    </p>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="#contact">
-        Let's create something
-      </a>
-
-      <a class="btn btn-secondary" href="#services">
-        Explore our universe
-      </a>
+    <div class="visual">
+      <div class="visual-glow"></div>
+      <div class="portal"></div>
+      <div class="website-card">
+        <div class="browser-dots"><i></i><i></i><i></i></div>
+        <div class="preview-screen">
+          <h3>Bring Your Business Into Focus.</h3>
+          <p>A digital experience made for your brand.</p>
+          <span class="preview-button">DISCOVER MORE</span>
+        </div>
+        <div class="preview-footer">
+          <span>✦ YOUR BRAND</span><span>DESIGNED TO CONNECT</span>
+        </div>
+      </div>
+      <div class="float-chip chip-one">✧ Modern Web Design</div>
+      <div class="float-chip chip-two">◈ Responsive Experiences</div>
     </div>
-
   </div>
 </section>
-
-<!-- ABOUT -->
 
 <section id="about">
-
-  <div class="about">
-
+  <div class="container about-grid">
     <div class="about-visual">
-      <div class="planet"></div>
+      <img src="logo.jpg.jpg" alt="StartNL Web Studio brand logo">
     </div>
-
     <div class="about-copy">
-
-      <div class="eyebrow">Welcome to StartNL</div>
-
-      <h2>
-        Every great idea deserves its own space.
-      </h2>
-
+      <div class="kicker">Who We Are</div>
+      <h3>Ideas Deserve a Place in the Digital World.</h3>
       <p>
-        StartNL Web Studio is a growing creative web studio
-        focused on helping businesses establish a modern
-        online presence.
+        StartNL Web Studio is a growing website design initiative focused on
+        helping small businesses and emerging brands establish an online presence.
       </p>
-
       <p>
-        From first impressions to the details that matter,
-        we aim to make every website clear, attractive
-        and easy to use.
+        We believe a website should be clear, attractive, easy to use and
+        thoughtfully designed around each business.
       </p>
-
-      <p>
-        Our goal is simple: bring your business closer
-        to the digital world.
-      </p>
-
+      <p><strong>Your Business. Our Website.</strong></p>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-
-<section id="services">
-
-  <div class="section-heading">
-
-    <div class="eyebrow">What we create</div>
-
-    <h2>
-      Digital experiences that move you forward.
-    </h2>
-
-    <p>
-      Thoughtful website solutions for businesses
-      ready to grow online.
-    </p>
-
-  </div>
-
-  <div class="cards">
-
-    <article class="card">
-      <div class="card-icon">✦</div>
-      <h3>Business Websites</h3>
-      <p>
-        Professional websites that introduce your business
-        and make it easy for customers to find you.
-      </p>
-    </article>
-
-    <article class="card">
-      <div class="card-icon">◈</div>
-      <h3>Landing Pages</h3>
-      <p>
-        Focused and attractive pages that present
-        your services, products or special offers.
-      </p>
-    </article>
-
-    <article class="card">
-      <div class="card-icon">⌘</div>
-      <h3>Website Refresh</h3>
-      <p>
-        Modern design improvements to help an existing
-        website feel clearer and more welcoming.
-      </p>
-    </article>
-
-    <article class="card">
-      <div class="card-icon">◎</div>
-      <h3>Responsive Design</h3>
-      <p>
-        Layouts designed to work across phones,
-        tablets and desktop screens.
-      </p>
-    </article>
-
-    <article class="card">
-      <div class="card-icon">✧</div>
-      <h3>Website Setup</h3>
-      <p>
-        Help getting a simple website structure
-        and essential pages ready for your business.
-      </p>
-    </article>
-
-    <article class="card">
-      <div class="card-icon">↗</div>
-      <h3>Website Updates</h3>
-      <p>
-        Practical content and layout updates
-        to keep your website useful and current.
-      </p>
-    </article>
-
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-
-<section id="portfolio">
-
-  <div class="section-heading">
-
-    <div class="eyebrow">Our creative space</div>
-
-    <h2>
-      Ideas becoming experiences.
-    </h2>
-
-    <p>
-      Explore our design direction and sample website concepts.
-    </p>
-
-  </div>
-
-  <div class="portfolio-card">
-
-    <div class="portfolio-screen">
-      <h3>YOUR BRAND.<br>YOUR DIGITAL SPACE.</h3>
-      <div class="screen-lines"></div>
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">What We Create</div>
+      <h2>Digital Experiences That Make an Impression.</h2>
+      <p>Practical website solutions designed to give your business a professional online presence.</p>
     </div>
-
-    <h3>Website Concepts & Demos</h3>
-
-    <p>
-      Design concepts created to explore how a business
-      can present itself online.
-    </p>
-
-    <a class="btn btn-secondary" href="#contact">
-      Discuss a website
-    </a>
-
+    <div class="service-grid">
+      <article class="service-card">
+        <div class="service-icon">✧</div>
+        <h3>Business Websites</h3>
+        <p>Professional websites to introduce your business, services and brand to customers.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">◈</div>
+        <h3>Landing Pages</h3>
+        <p>Focused pages that present your offer, highlight key information and encourage enquiries.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">▣</div>
+        <h3>Responsive Design</h3>
+        <p>Layouts designed to adapt to mobile phones, tablets and desktop screens.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">✦</div>
+        <h3>Website Redesign</h3>
+        <p>A refreshed look and clearer structure for an existing website.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">⌘</div>
+        <h3>Portfolio Websites</h3>
+        <p>Personal and professional spaces to showcase work, skills and achievements.</p>
+      </article>
+      <article class="service-card">
+        <div class="service-icon">◎</div>
+        <h3>Website Setup</h3>
+        <p>Basic website setup and content organisation to help get your online presence started.</p>
+      </article>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-  <div class="eyebrow">
-    Your next chapter starts here
-  </div>
-
-  <h2>
-    Ready to build your space<br>
-    <span class="gradient-text">on the internet?</span>
-  </h2>
-
-  <p>
-    Tell us about your business and the website
-    you have in mind.
-  </p>
-
-  <a
-    class="btn btn-primary"
-    href="mailto:startnlwebstudio@gmail.com"
-  >
-    Start a conversation
-  </a>
-
-  <div class="contact-details">
-
-    <a href="mailto:startnlwebstudio@gmail.com">
-      startnlwebstudio@gmail.com
-    </a>
-
-    <a href="tel:+917995438875">
-      +91 7995438875
-    </a>
-
-    <a
-      href="https://www.instagram.com/StartNL.web.studio/"
-      target="_blank"
-      rel="noopener"
-    >
-      Instagram
-    </a>
-
+<section id="process">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">How We Work</div>
+      <h2>Simple Steps. Thoughtful Design.</h2>
+      <p>A clear process from the first conversation to your website presentation.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Understand</h3>
+        <p>We learn about your business, your audience and what you want your website to achieve.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Design</h3>
+        <p>We plan the layout, visual direction and content around your business needs.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Present</h3>
+        <p>We share the website for your review and discuss the next steps together.</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<section id="contact">
+  <div class="container">
+    <div class="cta-panel">
+      <div class="kicker">Let's Create Something</div>
+      <h2>Your Next Step Starts Here.</h2>
+      <p>
+        Have a business idea or need a website? Tell us what you have in mind.
+        Let's start a conversation.
+      </p>
+      <a class="primary-btn" href="mailto:startnlwebstudio@gmail.com?subject=Website%20Enquiry%20-%20StartNL%20Web%20Studio">
+        Email StartNL Web Studio ↗
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
-<!-- FOOTER -->
-
 <footer>
-  © 2026 StartNL Web Studio. Built beyond ordinary.
+  <div class="container footer-row">
+    <div class="footer-brand">
+      <img src="logo.jpg.jpg" alt="">
+      <span>StartNL Web Studio</span>
+    </div>
+    <span>Your Business. Our Website.</span>
+    <a href="mailto:startnlwebstudio@gmail.com">startnlwebstudio@gmail.com</a>
+    <span>© <span id="year"></span> StartNL Web Studio</span>
+  </div>
 </footer>
 
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+const canvas = document.getElementById('space');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+camera.position.set(0, 0, 9);
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({
+    canvas,
+    alpha: true,
+    antialias: true
+  });
+} catch (error) {
+  console.warn('3D graphics are not available in this browser.', error);
+}
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  renderer.setClearColor(0x000000, 0);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  // Glowing 3D planet
+  const planetGeometry = new THREE.SphereGeometry(1.45, 64, 64);
+  const planetMaterial = new THREE.MeshStandardMaterial({
+    color: 0x174f9e,
+    roughness: 0.55,
+    metalness: 0.45,
+    emissive: 0x092b66,
+    emissiveIntensity: 0.55
+  });
+  const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+  group.add(planet);
+
+  // Atmospheric glow
+  const atmosphere = new THREE.Mesh(
+    new THREE.SphereGeometry(1.58, 48, 48),
+    new THREE.MeshBasicMaterial({
+      color: 0x318fff,
+      transparent: true,
+      opacity: 0.10,
+      side: THREE.BackSide
+    })
+  );
+  group.add(atmosphere);
+
+  // Planet rings
+  const ringMaterial = new THREE.MeshBasicMaterial({
+    color: 0x69caff,
+    transparent: true,
+    opacity: 0.62
+  });
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(2.15, 0.018, 12, 160),
+    ringMaterial
+  );
+  ring.rotation.x = 1.15;
+  ring.rotation.y = 0.25;
+  group.add(ring);
+
+  const ringTwo = new THREE.Mesh(
+    new THREE.TorusGeometry(2.5, 0.009, 8, 160),
+    new THREE.MeshBasicMaterial({
+      color: 0x3a83ff,
+      transparent: true,
+      opacity: 0.38
+    })
+  );
+  ringTwo.rotation.x = 1.35;
+  ringTwo.rotation.y = -0.3;
+  group.add(ringTwo);
+
+  // Lighting
+  scene.add(new THREE.AmbientLight(0x8dbdff, 1.5));
+  const keyLight = new THREE.PointLight(0x53baff, 85, 30);
+  keyLight.position.set(4, 3, 5);
+  scene.add(keyLight);
+
+  const blueLight = new THREE.PointLight(0x235cff, 55, 25);
+  blueLight.position.set(-4, -2, 2);
+  scene.add(blueLight);
+
+  // Star field
+  const starCount = 1300;
+  const positions = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 28;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 18;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 16 - 3;
+  }
+  const starGeometry = new THREE.BufferGeometry();
+  starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const stars = new THREE.Points(
+    starGeometry,
+    new THREE.PointsMaterial({
+      color: 0x9bcfff,
+      size: 0.035,
+      transparent: true,
+      opacity: 0.8
+    })
+  );
+  scene.add(stars);
+
+  // Small orbiting object
+  const satellite = new THREE.Mesh(
+    new THREE.SphereGeometry(0.11, 24, 24),
+    new THREE.MeshStandardMaterial({
+      color: 0x8be8ff,
+      emissive: 0x2d9dff,
+      emissiveIntensity: 2
+    })
+  );
+  scene.add(satellite);
+
+  const clock = new THREE.Clock();
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function resize() {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    if (!width || !height) return;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    if (!reducedMotion) {
+      planet.rotation.y = t * 0.12;
+      planet.rotation.x = Math.sin(t * 0.15) * 0.08;
+      ring.rotation.z = t * 0.08;
+      ringTwo.rotation.z = -t * 0.05;
+      stars.rotation.y = t * 0.006;
+      satellite.position.set(
+        Math.cos(t * 0.55) * 2.6,
+        Math.sin(t * 0.55) * 1.1,
+        Math.sin(t * 0.55) * 0.7
+      );
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
