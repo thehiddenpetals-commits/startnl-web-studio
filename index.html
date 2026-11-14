@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050914">
-<meta name="description" content="StartNL Web Studio creates modern, responsive websites for businesses and brands.">
+<meta name="theme-color" content="#050817">
+<meta name="description" content="StartNL Web Studio creates modern, responsive websites and digital experiences for businesses.">
 <title>StartNL Web Studio | Your Business. Our Website.</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,570 +13,1136 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#050914;
-  --panel:#0b1425;
-  --blue:#398cff;
-  --cyan:#61d9ff;
+:root{
+  --bg:#050817;
+  --panel:#0b1428;
+  --blue:#438fff;
+  --cyan:#72dcff;
   --white:#f6f9ff;
-  --muted:#9baac2;
-  --line:rgba(130,175,255,.16);
+  --muted:#a3b1ca;
+  --line:rgba(139,183,255,.17);
+  --max:1180px;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
   background:var(--bg);color:var(--white);
-  font-family:'DM Sans',sans-serif;line-height:1.7;
-  overflow-x:hidden;
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;line-height:1.7;
 }
-a{text-decoration:none;color:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-.container{width:min(1160px,90%);margin:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(var(--max),90%);margin:auto}
+section{position:relative;padding:110px 0}
+::selection{background:#438fff;color:white}
+
+/* Navigation */
 header{
-  position:fixed;top:0;left:0;width:100%;z-index:20;
-  background:rgba(5,9,20,.78);
-  backdrop-filter:blur(18px);
+  position:fixed;top:0;left:0;width:100%;z-index:50;
+  background:rgba(5,8,23,.78);
   border-bottom:1px solid var(--line);
+  backdrop-filter:blur(18px);
 }
 nav{
   height:82px;display:flex;align-items:center;
   justify-content:space-between;gap:25px;
 }
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{width:62px;height:62px;object-fit:contain;border-radius:12px}
-.brand-name{font-family:'Space Grotesk';font-size:21px;font-weight:700;line-height:1.15}
-.brand-name span{display:block;color:var(--cyan);font-size:10px;letter-spacing:3px;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:28px;font-size:13px;color:#d5e1f5}
+.brand img{
+  width:58px;height:58px;object-fit:contain;
+  border-radius:10px;
+}
+.brand-text{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;font-size:21px;line-height:1.15;
+}
+.brand-text small{
+  display:block;color:var(--cyan);
+  font-size:9px;letter-spacing:3px;margin-top:5px;
+}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{
+  font-size:13px;color:#c5d2e9;transition:.25s;
+}
 .nav-links a:hover{color:var(--cyan)}
-.nav-cta,.primary-btn{
+.nav-button,.button-primary{
   display:inline-flex;align-items:center;justify-content:center;
   padding:12px 21px;border-radius:30px;
-  background:linear-gradient(110deg,#2676ef,#51c7ff);
-  color:white;font-weight:700;font-size:13px;
-  box-shadow:0 8px 30px rgba(45,133,255,.22);
-  transition:.3s;
+  background:linear-gradient(110deg,#2775ed,#53caff);
+  color:white;font-size:13px;font-weight:700;
+  box-shadow:0 8px 30px #267df333;transition:.3s;
 }
-.nav-cta:hover,.primary-btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(45,133,255,.4)}
+.nav-button:hover,.button-primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px #267df355;
+}
+.menu-button{
+  display:none;background:none;border:1px solid var(--line);
+  color:white;border-radius:9px;padding:9px 12px;
+  cursor:pointer;
+}
+
+/* Hero */
 .hero{
-  min-height:850px;position:relative;display:flex;
-  align-items:center;padding:140px 0 90px;
-  overflow:hidden;
+  min-height:790px;display:flex;align-items:center;
+  position:relative;isolation:isolate;overflow:hidden;
+  padding:145px 0 90px;
   background:
-    radial-gradient(ellipse at 75% 40%,rgba(22,83,170,.22),transparent 45%),
-    linear-gradient(135deg,#050914,#081326 65%,#050914);
+    radial-gradient(ellipse at 75% 43%,#123b702c,transparent 48%),
+    linear-gradient(130deg,#050817,#09152b 60%,#050817);
 }
-#space{
+#universe{
   position:absolute;inset:0;width:100%;height:100%;
-  z-index:0;pointer-events:none;
+  z-index:-1;pointer-events:none;
 }
 .hero-grid{
-  position:relative;z-index:2;display:grid;
-  grid-template-columns:1fr 1fr;align-items:center;gap:35px;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:30px;position:relative;z-index:2;
 }
 .eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:8px 15px;border:1px solid rgba(87,171,255,.3);
-  border-radius:30px;color:#9bcaff;font-size:11px;
-  letter-spacing:2px;text-transform:uppercase;
-  background:rgba(20,62,116,.18);
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid #5baaff44;border-radius:30px;
+  padding:8px 15px;color:#b7d9ff;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  background:#102a4c55;
 }
 .eyebrow:before{
   content:"";width:7px;height:7px;border-radius:50%;
-  background:#5be0ff;box-shadow:0 0 12px #5be0ff;
+  background:#69e0ff;box-shadow:0 0 12px #69e0ff;
 }
 .hero h1{
-  font-family:'Space Grotesk';font-size:clamp(42px,5.5vw,70px);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(43px,5.3vw,70px);
   line-height:1.08;letter-spacing:-2.8px;
-  margin:26px 0 20px;
+  margin:26px 0 22px;
 }
-.gradient-text{
-  background:linear-gradient(90deg,#62caff,#428aff,#b4a8ff);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
+.gradient{
+  background:linear-gradient(90deg,#7bdfff,#468eff 65%,#b8aaff);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;
 }
-.hero-description{max-width:510px;color:var(--muted);font-size:16px}
-.hero-actions{display:flex;gap:15px;flex-wrap:wrap;margin-top:32px}
-.secondary-btn{
-  border:1px solid rgba(151,190,255,.35);
-  border-radius:30px;padding:12px 22px;
-  font-size:13px;font-weight:600;
+.hero-description{
+  color:var(--muted);font-size:15px;max-width:490px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.button-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #91baff55;border-radius:30px;
+  padding:12px 21px;font-size:13px;font-weight:600;
   transition:.3s;
 }
-.secondary-btn:hover{border-color:var(--cyan);color:var(--cyan)}
-.hero-note{color:#71849f;font-size:11px;margin-top:27px;letter-spacing:1px}
-.visual{
-  position:relative;height:530px;
+.button-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero-footnote{
+  color:#8294b2;font-size:10px;letter-spacing:2px;margin-top:27px;
+}
+
+/* 3D visual area */
+.scene-wrap{
+  height:530px;position:relative;
   display:flex;align-items:center;justify-content:center;
-  perspective:1000px;
+  perspective:1100px;
 }
-.visual-glow{
-  position:absolute;width:350px;height:350px;border-radius:50%;
-  background:#1268e8;filter:blur(100px);opacity:.2;
+.scene-glow{
+  position:absolute;width:350px;height:350px;
+  border-radius:50%;background:#1676ff;
+  filter:blur(115px);opacity:.19;
 }
-.portal{
-  position:absolute;width:390px;height:390px;border-radius:50%;
-  border:1px solid rgba(91,177,255,.45);
-  box-shadow:0 0 45px rgba(36,133,255,.17),inset 0 0 35px rgba(36,133,255,.12);
-  animation:portal 12s linear infinite;
+#planet-scene{
+  position:absolute;inset:0;width:100%;height:100%;
+  z-index:1;
 }
-.portal:before,.portal:after{
-  content:"";position:absolute;inset:20px;border-radius:50%;
-  border:1px dashed rgba(89,191,255,.5);
-}
-.portal:after{inset:48px;border-style:solid;opacity:.4}
-@keyframes portal{to{transform:rotate(360deg)}}
-.website-card{
-  position:relative;z-index:3;width:min(390px,90%);
-  padding:15px;border:1px solid rgba(133,187,255,.35);
-  background:linear-gradient(145deg,rgba(20,39,70,.94),rgba(7,14,29,.95));
-  border-radius:18px;box-shadow:0 25px 80px #0009;
-  transform:rotateY(-10deg) rotateX(5deg);
-  animation:float 6s ease-in-out infinite;
-}
-@keyframes float{50%{transform:translateY(-16px) rotateY(-5deg) rotateX(3deg)}}
-.browser-dots{display:flex;gap:5px;padding:5px 3px 12px}
-.browser-dots i{width:7px;height:7px;border-radius:50%;background:#5b83b9}
-.preview-screen{
-  height:225px;border-radius:10px;overflow:hidden;
-  background:linear-gradient(135deg,#123d79,#071326);
-  position:relative;padding:22px;
-}
-.preview-screen:before{
-  content:"";position:absolute;width:190px;height:190px;
-  border-radius:50%;right:-35px;top:30px;
-  background:radial-gradient(circle at 35% 30%,#b8edff,#3588ed 40%,#10265b 72%);
-  box-shadow:0 0 40px #308bff88;
-}
-.preview-screen h3{position:relative;z-index:1;font-family:'Space Grotesk';font-size:22px;max-width:170px;line-height:1.2}
-.preview-screen p{position:relative;z-index:1;font-size:10px;color:#d1e3ff;margin-top:10px}
-.preview-button{position:relative;z-index:1;display:inline-block;margin-top:15px;background:#fff;color:#12305a;padding:6px 12px;border-radius:20px;font-size:9px;font-weight:bold}
-.preview-footer{display:flex;justify-content:space-between;padding:13px 3px 2px;color:#a7bbd9;font-size:10px}
-.float-chip{
-  position:absolute;z-index:4;padding:11px 15px;
-  border:1px solid rgba(112,185,255,.35);
-  background:rgba(9,24,47,.88);border-radius:12px;
-  color:#dcecff;font-size:11px;backdrop-filter:blur(10px);
+.scene-label{
+  position:absolute;z-index:3;
+  border:1px solid #8acaff44;
+  background:#08162bd9;backdrop-filter:blur(14px);
+  border-radius:12px;padding:11px 15px;
+  font-size:11px;color:#d8ebff;
   box-shadow:0 12px 35px #0005;
 }
-.chip-one{top:70px;right:0;animation:float 5s ease-in-out infinite}
-.chip-two{bottom:85px;left:0;animation:float 7s ease-in-out infinite reverse}
-section{padding:105px 0;position:relative}
-.section-heading{text-align:center;max-width:700px;margin:0 auto 55px}
-.kicker{color:var(--cyan);font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700}
-.section-heading h2{font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);line-height:1.2;margin:13px 0}
+.scene-label.one{top:55px;right:0}
+.scene-label.two{bottom:65px;left:0}
+.scene-label span{color:var(--cyan);margin-right:6px}
+
+/* Floating website preview */
+.floating-preview{
+  position:absolute;z-index:4;right:0;bottom:0;
+  width:225px;padding:10px;
+  border-radius:13px;border:1px solid #91caff55;
+  background:#0b1930ed;
+  box-shadow:0 18px 50px #0008;
+  transform:rotateY(-12deg) rotateX(5deg);
+  animation:previewFloat 7s ease-in-out infinite;
+}
+@keyframes previewFloat{
+  0%,100%{transform:translateY(0) rotateY(-12deg) rotateX(5deg)}
+  50%{transform:translateY(-12px) rotateY(-7deg) rotateX(2deg)}
+}
+.preview-top{display:flex;gap:4px;padding:3px 3px 9px}
+.preview-top i{width:6px;height:6px;border-radius:50%;background:#6999c7}
+.preview-screen{
+  height:112px;border-radius:7px;overflow:hidden;
+  padding:12px;position:relative;
+  background:linear-gradient(130deg,#164c92,#09182f);
+}
+.preview-screen:after{
+  content:"";position:absolute;right:-18px;top:13px;
+  width:105px;height:105px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#c5f2ff,#378aff 45%,#102451 75%);
+}
+.preview-screen strong{
+  display:block;position:relative;z-index:2;
+  font-family:'Space Grotesk';font-size:13px;
+  line-height:1.3;max-width:115px;
+}
+.preview-screen small{
+  display:block;position:relative;z-index:2;
+  font-size:8px;color:#d2e5ff;margin-top:7px;
+}
+.preview-bottom{
+  display:flex;justify-content:space-between;
+  color:#a8bddb;font-size:8px;padding:9px 3px 1px;
+}
+
+/* General headings */
+.section-heading{
+  max-width:700px;margin:0 auto 55px;text-align:center;
+}
+.kicker{
+  color:var(--cyan);font-size:10px;
+  font-weight:700;letter-spacing:3px;text-transform:uppercase;
+}
+.section-heading h2{
+  font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);
+  line-height:1.2;margin:13px 0;
+}
 .section-heading p{color:var(--muted);font-size:14px}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.about-visual{
-  min-height:330px;border:1px solid var(--line);border-radius:22px;
-  background:radial-gradient(circle at 50% 50%,#123b70,#091327 65%);
-  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+
+/* About */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
 }
-.about-visual img{width:190px;height:190px;object-fit:contain;border-radius:18px;position:relative;z-index:2;box-shadow:0 0 60px #328cff33}
-.about-visual:before,.about-visual:after{
-  content:"";position:absolute;width:270px;height:100px;
-  border:1px solid #4eafff66;border-radius:50%;transform:rotate(-25deg);
+.about-art{
+  height:365px;position:relative;overflow:hidden;
+  display:grid;place-items:center;
+  border:1px solid var(--line);border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 45%,#1b4e89,#0b1930 60%,#08101f);
 }
-.about-visual:after{transform:rotate(35deg);width:310px}
-.about-copy h3{font-family:'Space Grotesk';font-size:30px;line-height:1.25;margin-bottom:18px}
+.about-art:before,.about-art:after{
+  content:"";position:absolute;width:280px;height:110px;
+  border:1px solid #62baff66;border-radius:50%;
+  transform:rotate(-28deg);
+}
+.about-art:after{width:340px;transform:rotate(30deg)}
+.about-art img{
+  width:190px;height:190px;object-fit:contain;
+  border-radius:15px;position:relative;z-index:2;
+  box-shadow:0 0 65px #4a9bff44;
+}
+.about-copy h3{
+  font-family:'Space Grotesk';font-size:32px;
+  line-height:1.2;margin:14px 0 20px;
+}
 .about-copy p{color:var(--muted);font-size:14px;margin-bottom:15px}
-.services{background:linear-gradient(180deg,transparent,rgba(15,40,76,.25),transparent)}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* Services */
+.services{
+  background:linear-gradient(180deg,transparent,#0b1a322c,transparent);
+}
+.service-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
 .service-card{
-  padding:28px;border:1px solid var(--line);border-radius:17px;
-  background:linear-gradient(145deg,rgba(17,34,60,.8),rgba(7,14,28,.8));
-  transition:.3s;
+  padding:27px;border-radius:17px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,#11213bdb,#091326e8);
+  min-height:205px;transition:.35s;
+  transform-style:preserve-3d;
 }
-.service-card:hover{transform:translateY(-7px);border-color:#3c8de9;box-shadow:0 15px 40px #0004}
+.service-card:hover{
+  transform:translateY(-7px);
+  border-color:#4c9ff0;
+  box-shadow:0 18px 45px #0005;
+}
 .service-icon{
-  width:48px;height:48px;border-radius:14px;
-  display:grid;place-items:center;font-size:22px;
-  background:linear-gradient(135deg,#174d91,#10233f);
-  margin-bottom:20px;
+  width:47px;height:47px;border-radius:13px;
+  display:grid;place-items:center;font-size:21px;
+  color:#a8eaff;background:linear-gradient(135deg,#1d579a,#102442);
+  margin-bottom:19px;
 }
-.service-card h3{font-family:'Space Grotesk';font-size:19px;margin-bottom:10px}
+.service-card h3{
+  font-family:'Space Grotesk';font-size:18px;margin-bottom:8px;
+}
 .service-card p{font-size:13px;color:var(--muted)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.step{border-top:1px solid #3a77bd;padding-top:23px}
-.step-number{font-family:'Space Grotesk';font-size:34px;color:#55baff;font-weight:700}
-.step h3{font-size:18px;margin:12px 0 8px}
-.step p{font-size:13px;color:var(--muted)}
-.cta-panel{
-  text-align:center;padding:65px 30px;border:1px solid #28558c;
-  border-radius:24px;
-  background:radial-gradient(ellipse at 50% 0%,#174b86 0%,#0a1830 60%,#08101f 100%);
-  box-shadow:0 20px 80px #0004;
+
+/* Showcase */
+.showcase{
+  overflow:hidden;
+  background:radial-gradient(ellipse at 50% 55%,#102e5433,transparent 65%);
 }
-.cta-panel h2{font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);line-height:1.2}
-.cta-panel p{color:#b6c8e1;max-width:560px;margin:15px auto 25px;font-size:14px}
-footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:12px}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.showcase-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.showcase-card{
+  border:1px solid var(--line);border-radius:17px;
+  background:#0b172b;padding:12px;
+  transition:.35s;
+}
+.showcase-card:hover{
+  transform:translateY(-8px) scale(1.015);
+  border-color:#4c9ff0;
+}
+.showcase-image{
+  height:180px;border-radius:10px;overflow:hidden;
+  padding:17px;position:relative;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.showcase-image.beauty{background:linear-gradient(135deg,#482b56,#bd829c)}
+.showcase-image.corporate{background:linear-gradient(135deg,#10345d,#267fc0)}
+.showcase-image.creative{background:linear-gradient(135deg,#33295f,#8055b5)}
+.showcase-image:after{
+  content:"";position:absolute;width:140px;height:140px;
+  right:-30px;bottom:-45px;border-radius:50%;
+  background:#ffffff24;filter:blur(2px);
+}
+.showcase-image strong{
+  position:relative;z-index:1;
+  font-family:'Space Grotesk';font-size:22px;line-height:1.1;
+  max-width:180px;
+}
+.showcase-image small{position:relative;z-index:1;font-size:9px;letter-spacing:2px}
+.showcase-card h3{font-family:'Space Grotesk';font-size:16px;margin:14px 5px 3px}
+.showcase-card p{font-size:12px;color:var(--muted);margin:0 5px 9px}
+
+/* Process */
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.process-item{border-top:1px solid #4a8dcc;padding-top:20px}
+.process-number{
+  font-family:'Space Grotesk';font-size:35px;
+  color:#62baff;font-weight:700;
+}
+.process-item h3{font-size:18px;margin:12px 0 8px}
+.process-item p{font-size:13px;color:var(--muted)}
+
+/* Contact */
+.contact-panel{
+  position:relative;overflow:hidden;text-align:center;
+  padding:70px 25px;border-radius:24px;
+  border:1px solid #438bce66;
+  background:
+    radial-gradient(ellipse at 50% 0%,#1b528c 0%,#0c1d39 55%,#081225 100%);
+}
+.contact-panel:before,.contact-panel:after{
+  content:"";position:absolute;width:250px;height:90px;
+  border:1px solid #8bd5ff44;border-radius:50%;
+  top:50%;left:50%;transform:translate(-50%,-50%) rotate(-25deg);
+  pointer-events:none;
+}
+.contact-panel:after{transform:translate(-50%,-50%) rotate(25deg);width:330px}
+.contact-content{position:relative;z-index:2}
+.contact-panel h2{
+  font-family:'Space Grotesk';
+  font-size:clamp(30px,4vw,45px);line-height:1.2;margin-top:12px;
+}
+.contact-panel p{
+  color:#c0d3ed;font-size:14px;
+  max-width:550px;margin:16px auto 25px;
+}
+.contact-details{
+  margin-top:24px;color:#d5e7ff;font-size:12px;
+}
+.contact-details a{color:var(--cyan)}
+footer{
+  padding:32px 0;border-top:1px solid var(--line);
+  color:var(--muted);font-size:12px;
+}
+.footer-row{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:20px;flex-wrap:wrap;
+}
 .footer-brand{display:flex;align-items:center;gap:10px;color:white;font-weight:700}
-.footer-brand img{width:42px;height:42px;object-fit:contain;border-radius:8px}
+.footer-brand img{width:40px;height:40px;object-fit:contain;border-radius:8px}
 footer a:hover{color:var(--cyan)}
-@media(max-width:800px){
-  .nav-links{display:none}
-  .hero{min-height:auto;padding-top:130px}
+
+/* Reveal on scroll */
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:850px){
   .hero-grid,.about-grid{grid-template-columns:1fr}
   .hero-content{text-align:center}
   .hero-description{margin:auto}
   .hero-actions{justify-content:center}
-  .visual{height:440px}
-  .portal{width:320px;height:320px}
+  .hero-footnote{margin-top:20px}
+  .scene-wrap{height:440px}
   .service-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{gap:30px}
+  .nav-links{
+    display:none;position:absolute;top:82px;left:0;width:100%;
+    padding:22px 5%;background:#081225;
+    border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;gap:18px;
+  }
+  .nav-links.open{display:flex}
+  .menu-button{display:block}
 }
-@media(max-width:520px){
-  nav{height:70px}
-  .brand img{width:49px;height:49px}
-  .brand-name{font-size:18px}
-  .nav-cta{padding:10px 14px;font-size:11px}
+@media(max-width:560px){
+  section{padding:76px 0}
+  nav{height:72px}
+  .brand img{width:48px;height:48px}
+  .brand-text{font-size:18px}
+  .brand-text small{font-size:8px}
+  .nav-links{top:72px}
+  .nav-button{padding:10px 13px;font-size:11px}
+  .hero{padding-top:125px;min-height:auto}
   .hero h1{letter-spacing:-1.5px}
-  .visual{height:360px}
-  .portal{width:275px;height:275px}
-  .website-card{width:85%}
-  .preview-screen{height:185px}
-  .chip-one{right:-5px;top:30px}
-  .chip-two{left:-5px;bottom:30px}
-  section{padding:75px 0}
-  .service-grid,.steps{grid-template-columns:1fr}
-  .about-visual{min-height:260px}
-  .about-visual img{width:155px;height:155px}
+  .scene-wrap{height:355px}
+  .scene-label{font-size:9px;padding:8px 10px}
+  .scene-label.one{right:-4px;top:28px}
+  .scene-label.two{left:-4px;bottom:30px}
+  .floating-preview{width:170px;right:-3px}
+  .preview-screen{height:90px}
+  .preview-screen strong{font-size:11px}
+  .preview-screen small{font-size:7px}
+  .about-art{height:270px}
+  .about-art img{width:155px;height:155px}
+  .about-copy h3{font-size:27px}
+  .service-grid,.showcase-grid,.process-grid{grid-template-columns:1fr}
+  .service-card{min-height:auto}
+  .showcase-image{height:165px}
+  .contact-panel{padding:55px 18px}
+  .footer-row{justify-content:center;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="container">
     <nav>
       <a href="#home" class="brand">
         <img src="logo.jpg.jpg" alt="StartNL Web Studio logo">
-        <div class="brand-name">StartNL<span>WEB STUDIO</span></div>
+        <div class="brand-text">
+          StartNL
+          <small>WEB STUDIO</small>
+        </div>
       </a>
-      <div class="nav-links">
+
+      <div class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#showcase">Showcase</a>
         <a href="#process">Process</a>
       </div>
-      <a class="nav-cta" href="#contact">Let's Talk ↗</a>
+
+      <div style="display:flex;align-items:center;gap:10px">
+        <a class="nav-button" href="#contact">Let's Talk ↗</a>
+        <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
+
+<!-- CINEMATIC HERO -->
 <section class="hero" id="home">
-  <canvas id="space"></canvas>
+  <canvas id="universe"></canvas>
+
   <div class="container hero-grid">
     <div class="hero-content">
-      <div class="eyebrow">Creative digital experiences</div>
-      <h1>Your Business Deserves<br><span class="gradient-text">More Than Just a Page.</span></h1>
+      <div class="eyebrow">A New Digital Beginning</div>
+
+      <h1>
+        Your Business Deserves
+        <span class="gradient">More Than Just a Page.</span>
+      </h1>
+
       <p class="hero-description">
-        We create modern, responsive websites that help businesses build
-        their digital presence, connect with customers and move forward.
+        We create modern, responsive websites that help businesses
+        establish their digital presence, connect with customers
+        and move forward with confidence.
       </p>
+
       <div class="hero-actions">
-        <a class="primary-btn" href="#contact">Start Your Website ↗</a>
-        <a class="secondary-btn" href="#services">Explore Services</a>
+        <a href="#contact" class="button-primary">Start Your Website ↗</a>
+        <a href="#services" class="button-outline">Explore Our Services</a>
       </div>
-      <p class="hero-note">DESIGN · DIGITAL PRESENCE · NEW POSSIBILITIES</p>
+
+      <div class="hero-footnote">
+        DESIGN · DIGITAL PRESENCE · NEW POSSIBILITIES
+      </div>
     </div>
 
-    <div class="visual">
-      <div class="visual-glow"></div>
-      <div class="portal"></div>
-      <div class="website-card">
-        <div class="browser-dots"><i></i><i></i><i></i></div>
+    <div class="scene-wrap">
+      <div class="scene-glow"></div>
+      <canvas id="planet-scene"></canvas>
+
+      <div class="scene-label one"><span>✦</span> Creative Digital Experiences</div>
+      <div class="scene-label two"><span>◈</span> Built Around Your Business</div>
+
+      <div class="floating-preview">
+        <div class="preview-top"><i></i><i></i><i></i></div>
         <div class="preview-screen">
-          <h3>Bring Your Business Into Focus.</h3>
-          <p>A digital experience made for your brand.</p>
-          <span class="preview-button">DISCOVER MORE</span>
+          <strong>Make Your Brand Stand Out.</strong>
+          <small>A digital experience for your business.</small>
         </div>
-        <div class="preview-footer">
-          <span>✦ YOUR BRAND</span><span>DESIGNED TO CONNECT</span>
+        <div class="preview-bottom">
+          <span>YOUR BRAND</span>
+          <span>WEB EXPERIENCE</span>
         </div>
       </div>
-      <div class="float-chip chip-one">✧ Modern Web Design</div>
-      <div class="float-chip chip-two">◈ Responsive Experiences</div>
     </div>
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="container about-grid">
-    <div class="about-visual">
-      <img src="logo.jpg.jpg" alt="StartNL Web Studio brand logo">
+    <div class="about-art reveal">
+      <img src="logo.jpg.jpg" alt="StartNL Web Studio logo">
     </div>
-    <div class="about-copy">
+
+    <div class="about-copy reveal">
       <div class="kicker">Who We Are</div>
       <h3>Ideas Deserve a Place in the Digital World.</h3>
+
       <p>
-        StartNL Web Studio is a growing website design initiative focused on
-        helping small businesses and emerging brands establish an online presence.
+        StartNL Web Studio is a growing website design initiative
+        focused on helping small businesses and emerging brands
+        establish a professional online presence.
       </p>
+
       <p>
-        We believe a website should be clear, attractive, easy to use and
-        thoughtfully designed around each business.
+        We believe a website should be clear, attractive,
+        easy to use and thoughtfully designed around each business.
       </p>
+
+      <p>
+        Every business has a story. We want to help bring that story
+        into the digital world.
+      </p>
+
       <p><strong>Your Business. Our Website.</strong></p>
     </div>
   </div>
 </section>
 
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <div class="kicker">What We Create</div>
       <h2>Digital Experiences That Make an Impression.</h2>
-      <p>Practical website solutions designed to give your business a professional online presence.</p>
+      <p>
+        Website solutions designed to give your business
+        a professional and accessible online presence.
+      </p>
     </div>
+
     <div class="service-grid">
-      <article class="service-card">
+      <article class="service-card reveal">
         <div class="service-icon">✧</div>
         <h3>Business Websites</h3>
-        <p>Professional websites to introduce your business, services and brand to customers.</p>
+        <p>
+          Professional websites to introduce your business,
+          services and brand to potential customers.
+        </p>
       </article>
-      <article class="service-card">
+
+      <article class="service-card reveal">
         <div class="service-icon">◈</div>
         <h3>Landing Pages</h3>
-        <p>Focused pages that present your offer, highlight key information and encourage enquiries.</p>
+        <p>
+          Focused pages that communicate your offer
+          and encourage visitors to get in touch.
+        </p>
       </article>
-      <article class="service-card">
+
+      <article class="service-card reveal">
         <div class="service-icon">▣</div>
         <h3>Responsive Design</h3>
-        <p>Layouts designed to adapt to mobile phones, tablets and desktop screens.</p>
+        <p>
+          Website layouts designed to adapt to
+          mobile phones, tablets and desktop screens.
+        </p>
       </article>
-      <article class="service-card">
+
+      <article class="service-card reveal">
         <div class="service-icon">✦</div>
         <h3>Website Redesign</h3>
-        <p>A refreshed look and clearer structure for an existing website.</p>
+        <p>
+          A refreshed look and clearer structure
+          for an existing business website.
+        </p>
       </article>
-      <article class="service-card">
+
+      <article class="service-card reveal">
         <div class="service-icon">⌘</div>
         <h3>Portfolio Websites</h3>
-        <p>Personal and professional spaces to showcase work, skills and achievements.</p>
+        <p>
+          Personal and professional spaces to
+          showcase work, skills and achievements.
+        </p>
       </article>
-      <article class="service-card">
+
+      <article class="service-card reveal">
         <div class="service-icon">◎</div>
         <h3>Website Setup</h3>
-        <p>Basic website setup and content organisation to help get your online presence started.</p>
+        <p>
+          Basic website setup and content organisation
+          to help businesses get started online.
+        </p>
       </article>
     </div>
   </div>
 </section>
 
+<!-- WEBSITE SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="kicker">Creative Possibilities</div>
+      <h2>Every Business Has Its Own Digital Identity.</h2>
+      <p>
+        Different businesses need different website experiences.
+        Here are some visual directions we can explore.
+      </p>
+    </div>
+
+    <div class="showcase-grid">
+      <article class="showcase-card reveal">
+        <div class="showcase-image beauty">
+          <small>BEAUTY & WELLNESS</small>
+          <strong>Beauty Begins With You.</strong>
+          <small>EXPLORE SERVICES ↗</small>
+        </div>
+        <h3>Beauty & Salon Websites</h3>
+        <p>Elegant layouts for salons, spas and beauty businesses.</p>
+      </article>
+
+      <article class="showcase-card reveal">
+        <div class="showcase-image corporate">
+          <small>BUSINESS & SERVICES</small>
+          <strong>Built Around Your Vision.</strong>
+          <small>DISCOVER MORE ↗</small>
+        </div>
+        <h3>Business Websites</h3>
+        <p>Professional websites for service providers and companies.</p>
+      </article>
+
+      <article class="showcase-card reveal">
+        <div class="showcase-image creative">
+          <small>CREATIVE & EVENTS</small>
+          <strong>Make Moments Memorable.</strong>
+          <small>VIEW COLLECTION ↗</small>
+        </div>
+        <h3>Creative Websites</h3>
+        <p>Visual experiences for events, creators and portfolios.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
 <section id="process">
   <div class="container">
-    <div class="section-heading">
+    <div class="section-heading reveal">
       <div class="kicker">How We Work</div>
       <h2>Simple Steps. Thoughtful Design.</h2>
-      <p>A clear process from the first conversation to your website presentation.</p>
+      <p>
+        A straightforward process from the first conversation
+        to your website presentation.
+      </p>
     </div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
+
+    <div class="process-grid">
+      <div class="process-item reveal">
+        <div class="process-number">01</div>
         <h3>Understand</h3>
-        <p>We learn about your business, your audience and what you want your website to achieve.</p>
+        <p>
+          We learn about your business, your audience
+          and what you want your website to achieve.
+        </p>
       </div>
-      <div class="step">
-        <div class="step-number">02</div>
+
+      <div class="process-item reveal">
+        <div class="process-number">02</div>
         <h3>Design</h3>
-        <p>We plan the layout, visual direction and content around your business needs.</p>
+        <p>
+          We plan the layout, visual direction
+          and content around your business needs.
+        </p>
       </div>
-      <div class="step">
-        <div class="step-number">03</div>
+
+      <div class="process-item reveal">
+        <div class="process-number">03</div>
         <h3>Present</h3>
-        <p>We share the website for your review and discuss the next steps together.</p>
+        <p>
+          We share the website for your review
+          and discuss the next steps together.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <div class="cta-panel">
-      <div class="kicker">Let's Create Something</div>
-      <h2>Your Next Step Starts Here.</h2>
-      <p>
-        Have a business idea or need a website? Tell us what you have in mind.
-        Let's start a conversation.
-      </p>
-      <a class="primary-btn" href="mailto:startnlwebstudio@gmail.com?subject=Website%20Enquiry%20-%20StartNL%20Web%20Studio">
-        Email StartNL Web Studio ↗
-      </a>
+    <div class="contact-panel reveal">
+      <div class="contact-content">
+        <div class="kicker">Let's Create Something</div>
+        <h2>Your Next Step Starts Here.</h2>
+        <p>
+          Have a business idea or need a website?
+          Tell us what you have in mind.
+          Let's start a conversation.
+        </p>
+
+        <a class="button-primary"
+           href="mailto:startnlwebstudio@gmail.com?subject=Website%20Enquiry%20-%20StartNL%20Web%20Studio">
+          Email StartNL Web Studio ↗
+        </a>
+
+        <div class="contact-details">
+          Email:
+          <a href="mailto:startnlwebstudio@gmail.com">
+            startnlwebstudio@gmail.com
+          </a>
+          <br>
+          Phone:
+          <a href="tel:+917995438875">+91 79954 38875</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
   <div class="container footer-row">
     <div class="footer-brand">
-      <img src="logo.jpg.jpg" alt="">
+      <img src="logo.jpg.jpg" alt="StartNL logo">
       <span>StartNL Web Studio</span>
     </div>
     <span>Your Business. Our Website.</span>
-    <a href="mailto:startnlwebstudio@gmail.com">startnlwebstudio@gmail.com</a>
+    <a href="mailto:startnlwebstudio@gmail.com">
+      startnlwebstudio@gmail.com
+    </a>
     <span>© <span id="year"></span> StartNL Web Studio</span>
   </div>
 </footer>
 
+<script>
+/* Mobile navigation */
+const menuButton = document.getElementById('menuButton');
+const navLinks = document.getElementById('navLinks');
+
+menuButton.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Scroll reveal */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
 <script type="module">
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
-const canvas = document.getElementById('space');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-camera.position.set(0, 0, 9);
+/* ======================================================
+   CINEMATIC 3D SPACE BACKGROUND
+====================================================== */
+const universeCanvas = document.getElementById('universe');
+let universeRenderer;
 
-let renderer;
 try {
-  renderer = new THREE.WebGLRenderer({
-    canvas,
+  universeRenderer = new THREE.WebGLRenderer({
+    canvas: universeCanvas,
     alpha: true,
     antialias: true
   });
 } catch (error) {
-  console.warn('3D graphics are not available in this browser.', error);
+  console.warn('Background 3D is unavailable:', error);
 }
 
-if (renderer) {
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-  renderer.setClearColor(0x000000, 0);
+if (universeRenderer) {
+  const universeScene = new THREE.Scene();
+  const universeCamera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
+  universeCamera.position.z = 12;
 
-  const group = new THREE.Group();
-  scene.add(group);
+  universeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+  universeRenderer.setClearColor(0x000000, 0);
 
-  // Glowing 3D planet
-  const planetGeometry = new THREE.SphereGeometry(1.45, 64, 64);
-  const planetMaterial = new THREE.MeshStandardMaterial({
-    color: 0x174f9e,
-    roughness: 0.55,
-    metalness: 0.45,
-    emissive: 0x092b66,
-    emissiveIntensity: 0.55
+  const starCount = 1700;
+  const starPositions = new Float32Array(starCount * 3);
+  const starSizes = new Float32Array(starCount);
+
+  for (let i = 0; i < starCount; i++) {
+    starPositions[i * 3] = (Math.random() - 0.5) * 42;
+    starPositions[i * 3 + 1] = (Math.random() - 0.5) * 25;
+    starPositions[i * 3 + 2] = (Math.random() - 0.5) * 25;
+    starSizes[i] = 0.5 + Math.random() * 1.5;
+  }
+
+  const starGeometry = new THREE.BufferGeometry();
+  starGeometry.setAttribute(
+    'position',
+    new THREE.BufferAttribute(starPositions, 3)
+  );
+  starGeometry.setAttribute(
+    'size',
+    new THREE.BufferAttribute(starSizes, 1)
+  );
+
+  const starMaterial = new THREE.PointsMaterial({
+    color: 0x9bcfff,
+    size: 0.045,
+    transparent: true,
+    opacity: 0.8,
+    sizeAttenuation: true
   });
-  const planet = new THREE.Mesh(planetGeometry, planetMaterial);
-  group.add(planet);
 
-  // Atmospheric glow
+  const starField = new THREE.Points(starGeometry, starMaterial);
+  universeScene.add(starField);
+
+  // Soft distant light spheres
+  const glowGroup = new THREE.Group();
+  universeScene.add(glowGroup);
+
+  for (let i = 0; i < 8; i++) {
+    const glow = new THREE.Mesh(
+      new THREE.SphereGeometry(0.035 + Math.random() * 0.08, 12, 12),
+      new THREE.MeshBasicMaterial({
+        color: i % 2 ? 0x4b9fff : 0x79ddff,
+        transparent: true,
+        opacity: 0.6
+      })
+    );
+
+    glow.position.set(
+      (Math.random() - 0.5) * 22,
+      (Math.random() - 0.5) * 12,
+      -2 - Math.random() * 7
+    );
+
+    glowGroup.add(glow);
+  }
+
+  function resizeUniverse() {
+    const width = universeCanvas.clientWidth;
+    const height = universeCanvas.clientHeight;
+    if (!width || !height) return;
+
+    universeCamera.aspect = width / height;
+    universeCamera.updateProjectionMatrix();
+    universeRenderer.setSize(width, height, false);
+  }
+
+  window.addEventListener('resize', resizeUniverse);
+  resizeUniverse();
+
+  const universeClock = new THREE.Clock();
+
+  function animateUniverse() {
+    requestAnimationFrame(animateUniverse);
+
+    const time = universeClock.getElapsedTime();
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      starField.rotation.y = time * 0.006;
+      starField.rotation.x = Math.sin(time * 0.04) * 0.015;
+      glowGroup.rotation.y = -time * 0.008;
+    }
+
+    universeRenderer.render(universeScene, universeCamera);
+  }
+
+  animateUniverse();
+}
+
+/* ======================================================
+   MAIN 3D PLANET
+====================================================== */
+const planetCanvas = document.getElementById('planet-scene');
+let planetRenderer;
+
+try {
+  planetRenderer = new THREE.WebGLRenderer({
+    canvas: planetCanvas,
+    alpha: true,
+    antialias: true
+  });
+} catch (error) {
+  console.warn('Planet 3D is unavailable:', error);
+}
+
+if (planetRenderer) {
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+  camera.position.set(0, 0, 8.5);
+
+  planetRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
+  planetRenderer.setClearColor(0x000000, 0);
+
+  const planetGroup = new THREE.Group();
+  scene.add(planetGroup);
+
+  // Procedural planet surface
+  const planetMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      time: { value: 0 }
+    },
+    vertexShader: `
+      varying vec3 vNormal;
+      varying vec3 vPosition;
+
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vPosition = position;
+
+        gl_Position = projectionMatrix *
+          modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform float time;
+      varying vec3 vNormal;
+      varying vec3 vPosition;
+
+      void main() {
+        vec3 normal = normalize(vNormal);
+
+        float wave1 = sin(vPosition.x * 4.0 + time * 0.18);
+        float wave2 = cos(vPosition.y * 5.0 - time * 0.12);
+        float wave3 = sin(vPosition.z * 5.0 + time * 0.10);
+
+        float pattern = (wave1 + wave2 + wave3) / 3.0;
+
+        vec3 deepBlue = vec3(0.015, 0.07, 0.23);
+        vec3 oceanBlue = vec3(0.035, 0.27, 0.62);
+        vec3 brightBlue = vec3(0.18, 0.65, 0.95);
+
+        vec3 color = mix(deepBlue, oceanBlue, smoothstep(-0.5, 0.5, pattern));
+        color = mix(color, brightBlue, smoothstep(0.45, 0.9, pattern) * 0.45);
+
+        vec3 lightDirection = normalize(vec3(-0.7, 0.8, 1.0));
+        float light = max(dot(normal, lightDirection), 0.0);
+
+        float rim = pow(1.0 - max(dot(normal, vec3(0.0, 0.0, 1.0)), 0.0), 2.4);
+
+        color *= 0.45 + light * 0.85;
+        color += vec3(0.05, 0.32, 0.75) * rim * 0.65;
+
+        gl_FragColor = vec4(color, 1.0);
+      }
+    `
+  });
+
+  const planet = new THREE.Mesh(
+    new THREE.SphereGeometry(1.65, 96, 96),
+    planetMaterial
+  );
+  planetGroup.add(planet);
+
+  // Outer atmosphere
   const atmosphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1.58, 48, 48),
+    new THREE.SphereGeometry(1.78, 64, 64),
     new THREE.MeshBasicMaterial({
-      color: 0x318fff,
+      color: 0x3a9fff,
       transparent: true,
       opacity: 0.10,
       side: THREE.BackSide
     })
   );
-  group.add(atmosphere);
+  planetGroup.add(atmosphere);
 
-  // Planet rings
-  const ringMaterial = new THREE.MeshBasicMaterial({
-    color: 0x69caff,
-    transparent: true,
-    opacity: 0.62
-  });
-  const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(2.15, 0.018, 12, 160),
-    ringMaterial
-  );
-  ring.rotation.x = 1.15;
-  ring.rotation.y = 0.25;
-  group.add(ring);
-
-  const ringTwo = new THREE.Mesh(
-    new THREE.TorusGeometry(2.5, 0.009, 8, 160),
+  // Bright atmospheric edge
+  const edge = new THREE.Mesh(
+    new THREE.SphereGeometry(1.71, 64, 64),
     new THREE.MeshBasicMaterial({
-      color: 0x3a83ff,
+      color: 0x56caff,
       transparent: true,
-      opacity: 0.38
+      opacity: 0.08,
+      side: THREE.BackSide
     })
   );
-  ringTwo.rotation.x = 1.35;
+  planetGroup.add(edge);
+
+  // Planet ring one
+  const ringOne = new THREE.Mesh(
+    new THREE.TorusGeometry(2.25, 0.018, 12, 180),
+    new THREE.MeshBasicMaterial({
+      color: 0x78dfff,
+      transparent: true,
+      opacity: 0.72
+    })
+  );
+  ringOne.rotation.x = 1.18;
+  ringOne.rotation.y = 0.22;
+  planetGroup.add(ringOne);
+
+  // Planet ring two
+  const ringTwo = new THREE.Mesh(
+    new THREE.TorusGeometry(2.58, 0.009, 8, 180),
+    new THREE.MeshBasicMaterial({
+      color: 0x398dff,
+      transparent: true,
+      opacity: 0.45
+    })
+  );
+  ringTwo.rotation.x = 1.34;
   ringTwo.rotation.y = -0.3;
-  group.add(ringTwo);
+  planetGroup.add(ringTwo);
+
+  // Orbiting moon
+  const moon = new THREE.Mesh(
+    new THREE.SphereGeometry(0.17, 32, 32),
+    new THREE.MeshStandardMaterial({
+      color: 0x9beaff,
+      emissive: 0x267dff,
+      emissiveIntensity: 1.3,
+      roughness: 0.35,
+      metalness: 0.25
+    })
+  );
+  scene.add(moon);
 
   // Lighting
-  scene.add(new THREE.AmbientLight(0x8dbdff, 1.5));
-  const keyLight = new THREE.PointLight(0x53baff, 85, 30);
+  scene.add(new THREE.AmbientLight(0x8abaff, 1.1));
+
+  const keyLight = new THREE.PointLight(0x58bdff, 95, 30);
   keyLight.position.set(4, 3, 5);
   scene.add(keyLight);
 
-  const blueLight = new THREE.PointLight(0x235cff, 55, 25);
-  blueLight.position.set(-4, -2, 2);
-  scene.add(blueLight);
+  const fillLight = new THREE.PointLight(0x234fff, 65, 25);
+  fillLight.position.set(-4, -2, 1);
+  scene.add(fillLight);
 
-  // Star field
-  const starCount = 1300;
-  const positions = new Float32Array(starCount * 3);
-  for (let i = 0; i < starCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 28;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 18;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 16 - 3;
+  // Fine particle field around the planet
+  const particleCount = 500;
+  const particlePositions = new Float32Array(particleCount * 3);
+
+  for (let i = 0; i < particleCount; i++) {
+    const radius = 2.8 + Math.random() * 2.2;
+    const angle = Math.random() * Math.PI * 2;
+    const height = (Math.random() - 0.5) * 2.5;
+
+    particlePositions[i * 3] = Math.cos(angle) * radius;
+    particlePositions[i * 3 + 1] = height;
+    particlePositions[i * 3 + 2] = Math.sin(angle) * radius;
   }
-  const starGeometry = new THREE.BufferGeometry();
-  starGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const stars = new THREE.Points(
-    starGeometry,
-    new THREE.PointsMaterial({
-      color: 0x9bcfff,
-      size: 0.035,
-      transparent: true,
-      opacity: 0.8
-    })
-  );
-  scene.add(stars);
 
-  // Small orbiting object
-  const satellite = new THREE.Mesh(
-    new THREE.SphereGeometry(0.11, 24, 24),
-    new THREE.MeshStandardMaterial({
-      color: 0x8be8ff,
-      emissive: 0x2d9dff,
-      emissiveIntensity: 2
+  const particleGeometry = new THREE.BufferGeometry();
+  particleGeometry.setAttribute(
+    'position',
+    new THREE.BufferAttribute(particlePositions, 3)
+  );
+
+  const particles = new THREE.Points(
+    particleGeometry,
+    new THREE.PointsMaterial({
+      color: 0x8fdcff,
+      size: 0.025,
+      transparent: true,
+      opacity: 0.65
     })
   );
-  scene.add(satellite);
+  planetGroup.add(particles);
+
+  // Responsive canvas sizing
+  function resizePlanet() {
+    const width = planetCanvas.clientWidth;
+    const height = planetCanvas.clientHeight;
+    if (!width || !height) return;
+
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    planetRenderer.setSize(width, height, false);
+  }
+
+  window.addEventListener('resize', resizePlanet);
+  resizePlanet();
+
+  // Pointer interaction: subtle planet movement
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const sceneWrap = document.querySelector('.scene-wrap');
+
+  sceneWrap.addEventListener('pointermove', event => {
+    const rect = sceneWrap.getBoundingClientRect();
+    targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 0.35;
+    targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 0.25;
+  });
+
+  sceneWrap.addEventListener('pointerleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
 
   const clock = new THREE.Clock();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function resize() {
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    if (!width || !height) return;
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-  }
-  window.addEventListener('resize', resize);
-  resize();
+  function animatePlanet() {
+    requestAnimationFrame(animatePlanet);
 
-  function animate() {
-    requestAnimationFrame(animate);
-    const t = clock.getElapsedTime();
+    const time = clock.getElapsedTime();
+
     if (!reducedMotion) {
-      planet.rotation.y = t * 0.12;
-      planet.rotation.x = Math.sin(t * 0.15) * 0.08;
-      ring.rotation.z = t * 0.08;
-      ringTwo.rotation.z = -t * 0.05;
-      stars.rotation.y = t * 0.006;
-      satellite.position.set(
-        Math.cos(t * 0.55) * 2.6,
-        Math.sin(t * 0.55) * 1.1,
-        Math.sin(t * 0.55) * 0.7
+      planetMaterial.uniforms.time.value = time;
+
+      currentX += (targetY - currentX) * 0.025;
+      currentY += (targetX - currentY) * 0.025;
+
+      planetGroup.rotation.y = time * 0.075 + currentY;
+      planetGroup.rotation.x = Math.sin(time * 0.12) * 0.035 + currentX;
+
+      ringOne.rotation.z = time * 0.035;
+      ringTwo.rotation.z = -time * 0.025;
+      particles.rotation.y = -time * 0.025;
+
+      moon.position.set(
+        Math.cos(time * 0.34) * 3.1,
+        Math.sin(time * 0.34) * 1.1,
+        Math.sin(time * 0.34) * 1.4
       );
     }
-    renderer.render(scene, camera);
-  }
-  animate();
-}
 
-document.getElementById('year').textContent = new Date().getFullYear();
+    planetRenderer.render(scene, camera);
+  }
+
+  animatePlanet();
+}
 </script>
+
 </body>
 </html>
