@@ -4,1145 +4,730 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050817">
-<meta name="description" content="StartNL Web Studio creates modern, responsive websites and digital experiences for businesses.">
-<title>StartNL Web Studio | Your Business. Our Website.</title>
+<meta name="theme-color" content="#050916">
+<meta name="description" content="StartNL Web Studio creates modern, responsive websites and digital experiences for small businesses.">
+<title>StartNL Web Studio | Digital Experiences That Move Businesses Forward</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#050817;
-  --panel:#0b1428;
-  --blue:#438fff;
-  --cyan:#72dcff;
-  --white:#f6f9ff;
-  --muted:#a3b1ca;
-  --line:rgba(139,183,255,.17);
-  --max:1180px;
+  --bg:#050916;
+  --bg2:#081327;
+  --panel:#0c1930;
+  --blue:#287cff;
+  --cyan:#55d7ff;
+  --violet:#9a91ff;
+  --white:#f5f8ff;
+  --muted:#a4b2ca;
+  --line:rgba(143,184,255,.16);
+  --max:1240px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
 body{
-  background:var(--bg);color:var(--white);
-  font-family:'DM Sans',sans-serif;
-  overflow-x:hidden;line-height:1.7;
+  margin:0;background:var(--bg);color:var(--white);
+  font-family:"DM Sans",sans-serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    radial-gradient(ellipse at 78% 18%,rgba(26,91,190,.18),transparent 35%),
+    radial-gradient(ellipse at 10% 65%,rgba(25,70,145,.12),transparent 35%);
 }
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-.container{width:min(var(--max),90%);margin:auto}
-section{position:relative;padding:110px 0}
-::selection{background:#438fff;color:white}
-
-/* Navigation */
-header{
-  position:fixed;top:0;left:0;width:100%;z-index:50;
-  background:rgba(5,8,23,.78);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:blur(18px);
-}
-nav{
-  height:82px;display:flex;align-items:center;
-  justify-content:space-between;gap:25px;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{
-  width:58px;height:58px;object-fit:contain;
-  border-radius:10px;
-}
-.brand-text{
-  font-family:'Space Grotesk',sans-serif;
-  font-weight:700;font-size:21px;line-height:1.15;
-}
-.brand-text small{
-  display:block;color:var(--cyan);
-  font-size:9px;letter-spacing:3px;margin-top:5px;
-}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{
-  font-size:13px;color:#c5d2e9;transition:.25s;
-}
-.nav-links a:hover{color:var(--cyan)}
-.nav-button,.button-primary{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:12px 21px;border-radius:30px;
-  background:linear-gradient(110deg,#2775ed,#53caff);
-  color:white;font-size:13px;font-weight:700;
-  box-shadow:0 8px 30px #267df333;transition:.3s;
-}
-.nav-button:hover,.button-primary:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 35px #267df355;
-}
-.menu-button{
-  display:none;background:none;border:1px solid var(--line);
-  color:white;border-radius:9px;padding:9px 12px;
-  cursor:pointer;
-}
-
-/* Hero */
-.hero{
-  min-height:790px;display:flex;align-items:center;
-  position:relative;isolation:isolate;overflow:hidden;
-  padding:145px 0 90px;
-  background:
-    radial-gradient(ellipse at 75% 43%,#123b702c,transparent 48%),
-    linear-gradient(130deg,#050817,#09152b 60%,#050817);
-}
-#universe{
-  position:absolute;inset:0;width:100%;height:100%;
-  z-index:-1;pointer-events:none;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:30px;position:relative;z-index:2;
-}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  border:1px solid #5baaff44;border-radius:30px;
-  padding:8px 15px;color:#b7d9ff;
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;
-  background:#102a4c55;
+  color:#8edfff;font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
 }
 .eyebrow:before{
-  content:"";width:7px;height:7px;border-radius:50%;
-  background:#69e0ff;box-shadow:0 0 12px #69e0ff;
+  content:"";width:22px;height:1px;background:var(--cyan);
+  box-shadow:0 0 12px var(--cyan);
+}
+.section{padding:115px 0;position:relative}
+.section-heading{max-width:700px;margin-bottom:48px}
+.section-heading h2{
+  font:800 clamp(34px,5vw,58px)/1.08 Manrope,sans-serif;
+  letter-spacing:-2.5px;margin:18px 0;
+}
+.gradient-text{
+  background:linear-gradient(100deg,#55d7ff,#398aff 55%,#a59aff);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.section-heading p,.muted{color:var(--muted);line-height:1.85}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:54px;padding:0 25px;border-radius:999px;
+  font-weight:700;font-size:14px;transition:.3s ease;
+  border:1px solid var(--line);cursor:pointer;
+}
+.btn-primary{
+  color:white;border:0;
+  background:linear-gradient(110deg,#2476f4,#42c5f4);
+  box-shadow:0 12px 35px rgba(28,115,240,.25);
+}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(28,115,240,.4)}
+.btn-outline{background:rgba(10,22,43,.55);color:white}
+.btn-outline:hover{border-color:#55d7ff;transform:translateY(-3px)}
+/* NAVIGATION */
+header{
+  position:fixed;z-index:50;top:0;left:0;width:100%;
+  background:rgba(5,9,22,.76);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(143,184,255,.12);
+}
+.nav{
+  min-height:88px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px;
+}
+.brand{display:flex;align-items:center;gap:13px;min-width:220px}
+.brand-mark{
+  width:59px;height:59px;border-radius:16px;overflow:hidden;
+  background:#f5f8ff;border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 5px 25px rgba(48,133,255,.15);flex:none;
+}
+.brand-mark img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center 24%;transform:scale(1.18);
+}
+.brand-name{font:800 23px Manrope,sans-serif;letter-spacing:-.8px}
+.brand-sub{
+  color:var(--cyan);font-size:10px;letter-spacing:3.5px;
+  font-weight:800;margin-top:3px;
+}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:14px;color:#c1cce0;transition:.2s}
+.nav-links a:hover{color:var(--cyan)}
+.nav-cta{min-height:48px;padding:0 22px}
+.menu-toggle{
+  display:none;background:none;color:white;border:1px solid var(--line);
+  border-radius:12px;padding:10px 13px;font-size:20px;
+}
+/* HERO */
+.hero{
+  min-height:790px;padding:160px 0 90px;position:relative;
+  display:flex;align-items:center;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 75% 48%,rgba(17,76,160,.25),transparent 40%),
+    linear-gradient(115deg,#050916 10%,#07152b 70%,#071126);
+}
+#hero3d{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:linear-gradient(90deg,rgba(5,9,22,.78),transparent 75%);
+}
+.hero-inner{
+  position:relative;z-index:2;display:grid;
+  grid-template-columns:1.08fr .92fr;align-items:center;gap:30px;
+}
+.hero-copy{max-width:700px}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 17px;
+  border:1px solid rgba(91,178,255,.28);border-radius:100px;
+  background:rgba(9,25,48,.65);color:#b7d8f6;
+  font-size:11px;font-weight:700;letter-spacing:2px;
+}
+.pulse{
+  width:8px;height:8px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 15px var(--cyan);
 }
 .hero h1{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:clamp(43px,5.3vw,70px);
-  line-height:1.08;letter-spacing:-2.8px;
-  margin:26px 0 22px;
+  font:800 clamp(44px,6.1vw,78px)/1.08 Manrope,sans-serif;
+  letter-spacing:-4px;margin:34px 0 23px;
 }
-.gradient{
-  background:linear-gradient(90deg,#7bdfff,#468eff 65%,#b8aaff);
-  -webkit-background-clip:text;background-clip:text;
-  color:transparent;
+.hero-copy>p{
+  max-width:590px;color:#aab9d0;font-size:17px;line-height:1.9;
 }
-.hero-description{
-  color:var(--muted);font-size:15px;max-width:490px;
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero-note{
+  margin-top:35px;color:#8193b0;font-size:10px;
+  letter-spacing:2.4px;text-transform:uppercase;
 }
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-.button-outline{
-  display:inline-flex;align-items:center;justify-content:center;
-  border:1px solid #91baff55;border-radius:30px;
-  padding:12px 21px;font-size:13px;font-weight:600;
-  transition:.3s;
+.hero-visual{min-height:440px;position:relative}
+.hero-caption{
+  position:absolute;right:0;top:10%;padding:14px 18px;
+  background:rgba(8,22,43,.72);border:1px solid var(--line);
+  border-radius:14px;color:#d6e6fa;font-size:12px;
+  backdrop-filter:blur(12px);
 }
-.button-outline:hover{border-color:var(--cyan);color:var(--cyan)}
-.hero-footnote{
-  color:#8294b2;font-size:10px;letter-spacing:2px;margin-top:27px;
+.hero-caption.bottom{top:auto;right:2%;bottom:5%}
+.scroll-cue{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  color:#758ba9;font-size:10px;letter-spacing:3px;
 }
-
-/* 3D visual area */
-.scene-wrap{
-  height:530px;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  perspective:1100px;
+/* TRUST STRIP */
+.trust-strip{border-block:1px solid var(--line);background:rgba(9,20,39,.7)}
+.trust-inner{
+  display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;
+  padding:23px 0;color:#93a6c3;font-size:11px;
+  letter-spacing:1.7px;text-transform:uppercase;
 }
-.scene-glow{
-  position:absolute;width:350px;height:350px;
-  border-radius:50%;background:#1676ff;
-  filter:blur(115px);opacity:.19;
-}
-#planet-scene{
-  position:absolute;inset:0;width:100%;height:100%;
-  z-index:1;
-}
-.scene-label{
-  position:absolute;z-index:3;
-  border:1px solid #8acaff44;
-  background:#08162bd9;backdrop-filter:blur(14px);
-  border-radius:12px;padding:11px 15px;
-  font-size:11px;color:#d8ebff;
-  box-shadow:0 12px 35px #0005;
-}
-.scene-label.one{top:55px;right:0}
-.scene-label.two{bottom:65px;left:0}
-.scene-label span{color:var(--cyan);margin-right:6px}
-
-/* Floating website preview */
-.floating-preview{
-  position:absolute;z-index:4;right:0;bottom:0;
-  width:225px;padding:10px;
-  border-radius:13px;border:1px solid #91caff55;
-  background:#0b1930ed;
-  box-shadow:0 18px 50px #0008;
-  transform:rotateY(-12deg) rotateX(5deg);
-  animation:previewFloat 7s ease-in-out infinite;
-}
-@keyframes previewFloat{
-  0%,100%{transform:translateY(0) rotateY(-12deg) rotateX(5deg)}
-  50%{transform:translateY(-12px) rotateY(-7deg) rotateX(2deg)}
-}
-.preview-top{display:flex;gap:4px;padding:3px 3px 9px}
-.preview-top i{width:6px;height:6px;border-radius:50%;background:#6999c7}
-.preview-screen{
-  height:112px;border-radius:7px;overflow:hidden;
-  padding:12px;position:relative;
-  background:linear-gradient(130deg,#164c92,#09182f);
-}
-.preview-screen:after{
-  content:"";position:absolute;right:-18px;top:13px;
-  width:105px;height:105px;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#c5f2ff,#378aff 45%,#102451 75%);
-}
-.preview-screen strong{
-  display:block;position:relative;z-index:2;
-  font-family:'Space Grotesk';font-size:13px;
-  line-height:1.3;max-width:115px;
-}
-.preview-screen small{
-  display:block;position:relative;z-index:2;
-  font-size:8px;color:#d2e5ff;margin-top:7px;
-}
-.preview-bottom{
-  display:flex;justify-content:space-between;
-  color:#a8bddb;font-size:8px;padding:9px 3px 1px;
-}
-
-/* General headings */
-.section-heading{
-  max-width:700px;margin:0 auto 55px;text-align:center;
-}
-.kicker{
-  color:var(--cyan);font-size:10px;
-  font-weight:700;letter-spacing:3px;text-transform:uppercase;
-}
-.section-heading h2{
-  font-family:'Space Grotesk';font-size:clamp(30px,4vw,46px);
-  line-height:1.2;margin:13px 0;
-}
-.section-heading p{color:var(--muted);font-size:14px}
-
-/* About */
-.about-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:60px;align-items:center;
-}
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .about-art{
-  height:365px;position:relative;overflow:hidden;
-  display:grid;place-items:center;
-  border:1px solid var(--line);border-radius:22px;
-  background:
-    radial-gradient(circle at 50% 45%,#1b4e89,#0b1930 60%,#08101f);
-}
-.about-art:before,.about-art:after{
-  content:"";position:absolute;width:280px;height:110px;
-  border:1px solid #62baff66;border-radius:50%;
-  transform:rotate(-28deg);
-}
-.about-art:after{width:340px;transform:rotate(30deg)}
-.about-art img{
-  width:190px;height:190px;object-fit:contain;
-  border-radius:15px;position:relative;z-index:2;
-  box-shadow:0 0 65px #4a9bff44;
-}
-.about-copy h3{
-  font-family:'Space Grotesk';font-size:32px;
-  line-height:1.2;margin:14px 0 20px;
-}
-.about-copy p{color:var(--muted);font-size:14px;margin-bottom:15px}
-
-/* Services */
-.services{
-  background:linear-gradient(180deg,transparent,#0b1a322c,transparent);
-}
-.service-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
-}
-.service-card{
-  padding:27px;border-radius:17px;
+  min-height:420px;position:relative;border-radius:28px;overflow:hidden;
   border:1px solid var(--line);
-  background:linear-gradient(145deg,#11213bdb,#091326e8);
-  min-height:205px;transition:.35s;
-  transform-style:preserve-3d;
-}
-.service-card:hover{
-  transform:translateY(-7px);
-  border-color:#4c9ff0;
-  box-shadow:0 18px 45px #0005;
-}
-.service-icon{
-  width:47px;height:47px;border-radius:13px;
-  display:grid;place-items:center;font-size:21px;
-  color:#a8eaff;background:linear-gradient(135deg,#1d579a,#102442);
-  margin-bottom:19px;
-}
-.service-card h3{
-  font-family:'Space Grotesk';font-size:18px;margin-bottom:8px;
-}
-.service-card p{font-size:13px;color:var(--muted)}
-
-/* Showcase */
-.showcase{
-  overflow:hidden;
-  background:radial-gradient(ellipse at 50% 55%,#102e5433,transparent 65%);
-}
-.showcase-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-.showcase-card{
-  border:1px solid var(--line);border-radius:17px;
-  background:#0b172b;padding:12px;
-  transition:.35s;
-}
-.showcase-card:hover{
-  transform:translateY(-8px) scale(1.015);
-  border-color:#4c9ff0;
-}
-.showcase-image{
-  height:180px;border-radius:10px;overflow:hidden;
-  padding:17px;position:relative;
-  display:flex;flex-direction:column;justify-content:space-between;
-}
-.showcase-image.beauty{background:linear-gradient(135deg,#482b56,#bd829c)}
-.showcase-image.corporate{background:linear-gradient(135deg,#10345d,#267fc0)}
-.showcase-image.creative{background:linear-gradient(135deg,#33295f,#8055b5)}
-.showcase-image:after{
-  content:"";position:absolute;width:140px;height:140px;
-  right:-30px;bottom:-45px;border-radius:50%;
-  background:#ffffff24;filter:blur(2px);
-}
-.showcase-image strong{
-  position:relative;z-index:1;
-  font-family:'Space Grotesk';font-size:22px;line-height:1.1;
-  max-width:180px;
-}
-.showcase-image small{position:relative;z-index:1;font-size:9px;letter-spacing:2px}
-.showcase-card h3{font-family:'Space Grotesk';font-size:16px;margin:14px 5px 3px}
-.showcase-card p{font-size:12px;color:var(--muted);margin:0 5px 9px}
-
-/* Process */
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.process-item{border-top:1px solid #4a8dcc;padding-top:20px}
-.process-number{
-  font-family:'Space Grotesk';font-size:35px;
-  color:#62baff;font-weight:700;
-}
-.process-item h3{font-size:18px;margin:12px 0 8px}
-.process-item p{font-size:13px;color:var(--muted)}
-
-/* Contact */
-.contact-panel{
-  position:relative;overflow:hidden;text-align:center;
-  padding:70px 25px;border-radius:24px;
-  border:1px solid #438bce66;
   background:
-    radial-gradient(ellipse at 50% 0%,#1b528c 0%,#0c1d39 55%,#081225 100%);
+    radial-gradient(circle at 50% 45%,rgba(44,133,255,.28),transparent 42%),
+    linear-gradient(145deg,#0d2345,#071020 75%);
+  display:grid;place-items:center;
 }
-.contact-panel:before,.contact-panel:after{
-  content:"";position:absolute;width:250px;height:90px;
-  border:1px solid #8bd5ff44;border-radius:50%;
-  top:50%;left:50%;transform:translate(-50%,-50%) rotate(-25deg);
-  pointer-events:none;
+.about-orb{
+  width:205px;height:205px;border-radius:50%;
+  background:radial-gradient(circle at 32% 25%,#a3e9ff,#368cff 24%,#0a347c 60%,#04132f 78%);
+  box-shadow:inset -20px -20px 45px #02091b,0 0 70px rgba(47,139,255,.35);
+  position:relative;animation:float 7s ease-in-out infinite;
 }
-.contact-panel:after{transform:translate(-50%,-50%) rotate(25deg);width:330px}
-.contact-content{position:relative;z-index:2}
-.contact-panel h2{
-  font-family:'Space Grotesk';
-  font-size:clamp(30px,4vw,45px);line-height:1.2;margin-top:12px;
+.about-orb:before,.about-orb:after{
+  content:"";position:absolute;border:1px solid rgba(94,205,255,.75);
+  width:290px;height:90px;border-radius:50%;left:50%;top:50%;
+  transform:translate(-50%,-50%) rotate(-24deg);
 }
-.contact-panel p{
-  color:#c0d3ed;font-size:14px;
-  max-width:550px;margin:16px auto 25px;
+.about-orb:after{transform:translate(-50%,-50%) rotate(54deg);width:250px}
+.art-label{
+  position:absolute;bottom:25px;left:25px;color:#b9cce6;
+  font-size:11px;letter-spacing:2px;text-transform:uppercase;
 }
-.contact-details{
-  margin-top:24px;color:#d5e7ff;font-size:12px;
+.about-copy h2{
+  font:800 clamp(34px,4.4vw,52px)/1.1 Manrope,sans-serif;
+  letter-spacing:-2px;margin:17px 0;
 }
-.contact-details a{color:var(--cyan)}
-footer{
-  padding:32px 0;border-top:1px solid var(--line);
-  color:var(--muted);font-size:12px;
+.about-copy p{color:var(--muted);line-height:1.9}
+.founder-note{
+  margin-top:27px;padding:22px;border-radius:16px;
+  background:linear-gradient(120deg,rgba(35,104,198,.15),rgba(12,26,49,.6));
+  border:1px solid var(--line);
 }
-.footer-row{
-  display:flex;justify-content:space-between;
-  align-items:center;gap:20px;flex-wrap:wrap;
+.founder-note strong{display:block;color:#fff;margin-bottom:7px}
+.founder-note span{color:#aabbd3;font-size:13px;line-height:1.8}
+/* SERVICES */
+.services{background:linear-gradient(180deg,transparent,rgba(10,27,53,.55),transparent)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.service-card{
+  min-height:280px;padding:27px 23px;border-radius:21px;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(17,38,70,.86),rgba(7,16,32,.9));
+  position:relative;overflow:hidden;transition:.35s;
 }
-.footer-brand{display:flex;align-items:center;gap:10px;color:white;font-weight:700}
-.footer-brand img{width:40px;height:40px;object-fit:contain;border-radius:8px}
-footer a:hover{color:var(--cyan)}
-
-/* Reveal on scroll */
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .8s ease,transform .8s ease;
+.service-card:before{
+  content:"";position:absolute;width:160px;height:160px;border-radius:50%;
+  background:rgba(37,130,255,.12);filter:blur(35px);
+  right:-70px;top:-65px;transition:.35s;
 }
+.service-card:hover{transform:translateY(-9px);border-color:rgba(85,215,255,.5)}
+.service-card:hover:before{transform:scale(1.5)}
+.service-icon{
+  width:55px;height:55px;display:grid;place-items:center;
+  border-radius:16px;font-size:24px;color:#8de5ff;
+  background:linear-gradient(145deg,rgba(44,133,255,.25),rgba(61,212,255,.06));
+  border:1px solid rgba(90,185,255,.25);margin-bottom:30px;
+}
+.service-card h3{font:700 19px Manrope;margin:0 0 12px}
+.service-card p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+/* SHOWCASE */
+.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.project{
+  border:1px solid var(--line);border-radius:23px;overflow:hidden;
+  background:#0a1529;transition:.35s;
+}
+.project:hover{transform:translateY(-7px);border-color:rgba(85,215,255,.42)}
+.project-screen{
+  height:260px;position:relative;overflow:hidden;
+  display:grid;place-items:center;padding:25px;
+}
+.project-screen.salon{background:linear-gradient(135deg,#3c2030,#d39c9b)}
+.project-screen.bakery{background:linear-gradient(135deg,#2d1b13,#b77745)}
+.project-screen.business{background:linear-gradient(135deg,#0b1c38,#2477b9)}
+.project-screen.restaurant{background:linear-gradient(135deg,#132c2b,#6b9b82)}
+.mock-browser{
+  width:88%;height:190px;background:#f8f8fb;color:#14233a;
+  border-radius:10px;box-shadow:0 25px 55px rgba(0,0,0,.35);
+  overflow:hidden;transform:perspective(900px) rotateY(-9deg) rotateX(3deg);
+  transition:.5s;
+}
+.project:hover .mock-browser{transform:perspective(900px) rotateY(0) rotateX(0) translateY(-5px)}
+.mock-top{height:19px;background:#e8edf4;display:flex;gap:4px;align-items:center;padding-left:10px}
+.mock-top i{width:5px;height:5px;background:#aab5c5;border-radius:50%}
+.mock-body{padding:22px 20px}
+.mock-body small{font-size:8px;letter-spacing:2px;color:#71819a}
+.mock-body h3{font:800 22px Manrope;margin:8px 0;color:#13233b}
+.mock-body p{font-size:9px;color:#68768a}
+.mock-button{display:inline-block;background:#216fe3;color:white;padding:7px 12px;border-radius:4px;font-size:8px}
+.project-info{padding:22px 23px}
+.project-info small{color:var(--cyan);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+.project-info h3{font:700 19px Manrope;margin:8px 0}
+.project-info p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}
+.demo-label{font-size:10px;color:#b4c7e3;margin-top:12px;display:block}
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.why-card{padding:26px;border:1px solid var(--line);border-radius:18px;background:rgba(10,24,46,.65)}
+.why-card b{font:700 17px Manrope;display:block;margin:15px 0 9px}
+.why-card p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+.why-number{font:800 28px Manrope;color:#54cfff}
+/* PROCESS */
+.process{background:linear-gradient(180deg,transparent,rgba(12,34,67,.55),transparent)}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.process-step{padding:25px 20px;border-top:1px solid rgba(84,197,255,.55);position:relative}
+.process-step span{font:800 34px Manrope;color:#3288ff}
+.process-step h3{font:700 17px Manrope;margin:15px 0 9px}
+.process-step p{color:var(--muted);font-size:13px;line-height:1.8;margin:0}
+/* CTA */
+.contact-panel{
+  position:relative;overflow:hidden;text-align:center;padding:75px 35px;
+  border:1px solid rgba(85,176,255,.28);border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(41,126,255,.27),transparent 50%),
+    linear-gradient(135deg,#0e2142,#071020);
+}
+.contact-panel h2{font:800 clamp(34px,5vw,55px)/1.12 Manrope;letter-spacing:-2px;margin:18px 0}
+.contact-panel p{color:var(--muted);line-height:1.8;max-width:620px;margin:0 auto 28px}
+/* FOOTER */
+footer{padding:45px 0 28px;border-top:1px solid var(--line);background:#040814}
+.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:35px}
+.footer-about{max-width:360px}
+.footer-about p{color:#8fa1bc;font-size:13px;line-height:1.8}
+.footer-links{display:flex;gap:23px;flex-wrap:wrap;color:#aabbd3;font-size:13px}
+.footer-bottom{
+  border-top:1px solid var(--line);padding-top:22px;
+  display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;
+  color:#72839e;font-size:11px;
+}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.visible{opacity:1;transform:translateY(0)}
-
-@media(max-width:850px){
-  .hero-grid,.about-grid{grid-template-columns:1fr}
-  .hero-content{text-align:center}
-  .hero-description{margin:auto}
-  .hero-actions{justify-content:center}
-  .hero-footnote{margin-top:20px}
-  .scene-wrap{height:440px}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-16px) rotate(5deg)}}
+@media(max-width:950px){
+  .nav-links{gap:17px}.brand{min-width:auto}
+  .hero-inner{grid-template-columns:1fr}.hero-visual{min-height:260px}
+  .hero{min-height:900px}.hero h1{max-width:760px}
   .service-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{gap:35px}
+}
+@media(max-width:700px){
+  .container{width:min(100% - 34px,var(--max))}
+  .nav{min-height:75px}.brand-mark{width:49px;height:49px;border-radius:13px}
+  .brand-name{font-size:19px}.brand-sub{font-size:8px;letter-spacing:2.8px}
+  .menu-toggle{display:block}
   .nav-links{
-    display:none;position:absolute;top:82px;left:0;width:100%;
-    padding:22px 5%;background:#081225;
-    border-bottom:1px solid var(--line);
-    flex-direction:column;align-items:flex-start;gap:18px;
+    display:none;position:absolute;top:75px;left:0;width:100%;
+    padding:22px;background:rgba(5,9,22,.97);
+    border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
   }
   .nav-links.open{display:flex}
-  .menu-button{display:block}
+  .nav-links a{padding:10px 5px}
+  .nav-cta{display:none}
+  .hero{min-height:850px;padding:135px 0 75px}
+  .hero h1{font-size:clamp(43px,12vw,62px);letter-spacing:-2.7px}
+  .hero-copy>p{font-size:15px}
+  .hero-visual{min-height:210px}
+  .hero-caption{top:0;right:0}.hero-caption.bottom{bottom:0}
+  .section{padding:78px 0}
+  .about-grid,.showcase-grid{grid-template-columns:1fr}
+  .about-art{min-height:310px}
+  .service-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .service-card{padding:20px 16px;min-height:260px}
+  .service-card h3{font-size:16px}
+  .why-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .trust-inner{justify-content:center;text-align:center}
+  .contact-panel{padding:55px 22px}
+  .footer-top{flex-direction:column}
 }
-@media(max-width:560px){
-  section{padding:76px 0}
-  nav{height:72px}
-  .brand img{width:48px;height:48px}
-  .brand-text{font-size:18px}
-  .brand-text small{font-size:8px}
-  .nav-links{top:72px}
-  .nav-button{padding:10px 13px;font-size:11px}
-  .hero{padding-top:125px;min-height:auto}
-  .hero h1{letter-spacing:-1.5px}
-  .scene-wrap{height:355px}
-  .scene-label{font-size:9px;padding:8px 10px}
-  .scene-label.one{right:-4px;top:28px}
-  .scene-label.two{left:-4px;bottom:30px}
-  .floating-preview{width:170px;right:-3px}
-  .preview-screen{height:90px}
-  .preview-screen strong{font-size:11px}
-  .preview-screen small{font-size:7px}
-  .about-art{height:270px}
-  .about-art img{width:155px;height:155px}
-  .about-copy h3{font-size:27px}
-  .service-grid,.showcase-grid,.process-grid{grid-template-columns:1fr}
-  .service-card{min-height:auto}
-  .showcase-image{height:165px}
-  .contact-panel{padding:55px 18px}
-  .footer-row{justify-content:center;text-align:center}
+@media(max-width:420px){
+  .service-grid,.process-grid{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .brand-name{font-size:17px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="container">
-    <nav>
-      <a href="#home" class="brand">
-        <img src="logo.jpg.jpg" alt="StartNL Web Studio logo">
-        <div class="brand-text">
-          StartNL
-          <small>WEB STUDIO</small>
-        </div>
-      </a>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#showcase">Showcase</a>
-        <a href="#process">Process</a>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="StartNL Web Studio home">
+      <div class="brand-mark"><img src="logo.jpg.jpg" alt="StartNL symbol"></div>
+      <div>
+        <div class="brand-name">StartNL</div>
+        <div class="brand-sub">WEB STUDIO</div>
       </div>
+    </a>
 
-      <div style="display:flex;align-items:center;gap:10px">
-        <a class="nav-button" href="#contact">Let's Talk ↗</a>
-        <button class="menu-button" id="menuButton" aria-label="Toggle navigation">☰</button>
-      </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#showcase">Showcase</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
     </nav>
+    <a class="btn btn-primary nav-cta" href="#contact">Let's Talk ↗</a>
   </div>
 </header>
 
 <main>
-
-<!-- CINEMATIC HERO -->
 <section class="hero" id="home">
-  <canvas id="universe"></canvas>
-
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <div class="eyebrow">A New Digital Beginning</div>
-
-      <h1>
-        Your Business Deserves
-        <span class="gradient">More Than Just a Page.</span>
-      </h1>
-
-      <p class="hero-description">
-        We create modern, responsive websites that help businesses
-        establish their digital presence, connect with customers
-        and move forward with confidence.
-      </p>
-
+  <canvas id="hero3d" aria-hidden="true"></canvas>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <div class="hero-pill"><span class="pulse"></span> INDEPENDENT DIGITAL DESIGN STUDIO</div>
+      <h1>We Don't Just Build Websites.<br><span class="gradient-text">We Create Digital Experiences.</span></h1>
+      <p>Thoughtfully designed, modern and responsive websites that help businesses stand out, connect with customers and move forward with confidence.</p>
       <div class="hero-actions">
-        <a href="#contact" class="button-primary">Start Your Website ↗</a>
-        <a href="#services" class="button-outline">Explore Our Services</a>
+        <a class="btn btn-primary" href="#contact">Start Your Website ↗</a>
+        <a class="btn btn-outline" href="#showcase">Explore Our Work ↓</a>
       </div>
-
-      <div class="hero-footnote">
-        DESIGN · DIGITAL PRESENCE · NEW POSSIBILITIES
-      </div>
+      <div class="hero-note">DESIGN WITH PURPOSE · BUILT AROUND YOUR BUSINESS</div>
     </div>
-
-    <div class="scene-wrap">
-      <div class="scene-glow"></div>
-      <canvas id="planet-scene"></canvas>
-
-      <div class="scene-label one"><span>✦</span> Creative Digital Experiences</div>
-      <div class="scene-label two"><span>◈</span> Built Around Your Business</div>
-
-      <div class="floating-preview">
-        <div class="preview-top"><i></i><i></i><i></i></div>
-        <div class="preview-screen">
-          <strong>Make Your Brand Stand Out.</strong>
-          <small>A digital experience for your business.</small>
-        </div>
-        <div class="preview-bottom">
-          <span>YOUR BRAND</span>
-          <span>WEB EXPERIENCE</span>
-        </div>
-      </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-caption">✦ Creative digital experiences</div>
+      <div class="hero-caption bottom">◇ Built around your business</div>
     </div>
   </div>
+  <div class="scroll-cue">SCROLL TO EXPLORE ↓</div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<div class="trust-strip">
+  <div class="container trust-inner">
+    <span>Modern Design</span><span>Responsive Experiences</span>
+    <span>Business-Focused</span><span>Thoughtful Details</span>
+  </div>
+</div>
+
+<section class="section" id="about">
   <div class="container about-grid">
     <div class="about-art reveal">
-      <img src="logo.jpg.jpg" alt="StartNL Web Studio logo">
+      <div class="about-orb"></div>
+      <div class="art-label">A new digital beginning · StartNL</div>
     </div>
-
     <div class="about-copy reveal">
-      <div class="kicker">Who We Are</div>
-      <h3>Ideas Deserve a Place in the Digital World.</h3>
-
-      <p>
-        StartNL Web Studio is a growing website design initiative
-        focused on helping small businesses and emerging brands
-        establish a professional online presence.
-      </p>
-
-      <p>
-        We believe a website should be clear, attractive,
-        easy to use and thoughtfully designed around each business.
-      </p>
-
-      <p>
-        Every business has a story. We want to help bring that story
-        into the digital world.
-      </p>
-
-      <p><strong>Your Business. Our Website.</strong></p>
+      <span class="eyebrow">ABOUT THE STUDIO</span>
+      <h2>Small studio.<br><span class="gradient-text">Big ideas.</span></h2>
+      <p>StartNL Web Studio is an independent, growing web design studio based in India. We focus on helping small businesses build a professional online presence through modern, responsive and thoughtfully designed websites.</p>
+      <p>We believe a website should do more than look attractive. It should tell your story, make your services clear and make it easier for customers to connect with your business.</p>
+      <div class="founder-note">
+        <strong>A note from our founder</strong>
+        <span>I'm Nithusha, the founder of StartNL Web Studio. I started this studio with a simple belief: every business deserves the opportunity to present itself beautifully online. I'm building StartNL with curiosity, care and a commitment to creating meaningful digital experiences—one project at a time.</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+<section class="section services" id="services">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="kicker">What We Create</div>
-      <h2>Digital Experiences That Make an Impression.</h2>
-      <p>
-        Website solutions designed to give your business
-        a professional and accessible online presence.
-      </p>
+      <span class="eyebrow">WHAT WE CREATE</span>
+      <h2>Digital solutions with <span class="gradient-text">purpose.</span></h2>
+      <p>From a first online presence to a refreshed digital identity, we focus on clear design, useful experiences and the needs of your business.</p>
     </div>
-
     <div class="service-grid">
       <article class="service-card reveal">
-        <div class="service-icon">✧</div>
-        <h3>Business Websites</h3>
-        <p>
-          Professional websites to introduce your business,
-          services and brand to potential customers.
-        </p>
-      </article>
-
-      <article class="service-card reveal">
         <div class="service-icon">◈</div>
-        <h3>Landing Pages</h3>
-        <p>
-          Focused pages that communicate your offer
-          and encourage visitors to get in touch.
-        </p>
+        <h3>Business Websites</h3>
+        <p>Professional websites that introduce your business, showcase your services and help customers find the information they need.</p>
       </article>
-
+      <article class="service-card reveal">
+        <div class="service-icon">✧</div>
+        <h3>Landing Pages</h3>
+        <p>Focused, engaging pages designed around a service, campaign, product or business goal.</p>
+      </article>
       <article class="service-card reveal">
         <div class="service-icon">▣</div>
         <h3>Responsive Design</h3>
-        <p>
-          Website layouts designed to adapt to
-          mobile phones, tablets and desktop screens.
-        </p>
+        <p>Layouts designed to look clear and work smoothly across mobile phones, tablets and desktop screens.</p>
       </article>
-
       <article class="service-card reveal">
-        <div class="service-icon">✦</div>
+        <div class="service-icon">⟳</div>
         <h3>Website Redesign</h3>
-        <p>
-          A refreshed look and clearer structure
-          for an existing business website.
-        </p>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-icon">⌘</div>
-        <h3>Portfolio Websites</h3>
-        <p>
-          Personal and professional spaces to
-          showcase work, skills and achievements.
-        </p>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-icon">◎</div>
-        <h3>Website Setup</h3>
-        <p>
-          Basic website setup and content organisation
-          to help businesses get started online.
-        </p>
+        <p>A refreshed look and improved structure for businesses ready to give their existing website a new direction.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- WEBSITE SHOWCASE -->
-<section class="showcase" id="showcase">
+<section class="section" id="showcase">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="kicker">Creative Possibilities</div>
-      <h2>Every Business Has Its Own Digital Identity.</h2>
-      <p>
-        Different businesses need different website experiences.
-        Here are some visual directions we can explore.
-      </p>
+      <span class="eyebrow">SELECTED CONCEPTS</span>
+      <h2>Imagine what your business could <span class="gradient-text">look like online.</span></h2>
+      <p>Explore sample directions for different business types. These concept previews demonstrate possible design approaches; they are not presented as completed client projects.</p>
     </div>
-
     <div class="showcase-grid">
-      <article class="showcase-card reveal">
-        <div class="showcase-image beauty">
-          <small>BEAUTY & WELLNESS</small>
-          <strong>Beauty Begins With You.</strong>
-          <small>EXPLORE SERVICES ↗</small>
+      <article class="project reveal">
+        <div class="project-screen salon">
+          <div class="mock-browser">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <small>THE BEAUTY EDIT</small>
+              <h3>Beauty, thoughtfully expressed.</h3>
+              <p>Discover services designed around you.</p>
+              <span class="mock-button">EXPLORE SERVICES</span>
+            </div>
+          </div>
         </div>
-        <h3>Beauty & Salon Websites</h3>
-        <p>Elegant layouts for salons, spas and beauty businesses.</p>
+        <div class="project-info"><small>BEAUTY & WELLNESS</small><h3>Salon Website Concept</h3><p>An elegant direction for salons, beauty studios and wellness businesses.</p><span class="demo-label">Concept demonstration</span></div>
       </article>
 
-      <article class="showcase-card reveal">
-        <div class="showcase-image corporate">
-          <small>BUSINESS & SERVICES</small>
-          <strong>Built Around Your Vision.</strong>
-          <small>DISCOVER MORE ↗</small>
+      <article class="project reveal">
+        <div class="project-screen bakery">
+          <div class="mock-browser">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <small>THE DAILY BAKE</small>
+              <h3>Freshly made. Made with care.</h3>
+              <p>A little sweetness for every occasion.</p>
+              <span class="mock-button">DISCOVER MORE</span>
+            </div>
+          </div>
         </div>
-        <h3>Business Websites</h3>
-        <p>Professional websites for service providers and companies.</p>
+        <div class="project-info"><small>FOOD & HOSPITALITY</small><h3>Bakery Website Concept</h3><p>A warm, inviting online presence for bakeries, cafés and food businesses.</p><span class="demo-label">Concept demonstration</span></div>
       </article>
 
-      <article class="showcase-card reveal">
-        <div class="showcase-image creative">
-          <small>CREATIVE & EVENTS</small>
-          <strong>Make Moments Memorable.</strong>
-          <small>VIEW COLLECTION ↗</small>
+      <article class="project reveal">
+        <div class="project-screen business">
+          <div class="mock-browser">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <small>YOUR NEXT CHAPTER</small>
+              <h3>Ideas into impact.</h3>
+              <p>Clarity, creativity and a better way forward.</p>
+              <span class="mock-button">MEET THE TEAM</span>
+            </div>
+          </div>
         </div>
-        <h3>Creative Websites</h3>
-        <p>Visual experiences for events, creators and portfolios.</p>
+        <div class="project-info"><small>PROFESSIONAL SERVICES</small><h3>Business Website Concept</h3><p>A confident and structured design for consultants and service providers.</p><span class="demo-label">Concept demonstration</span></div>
+      </article>
+
+      <article class="project reveal">
+        <div class="project-screen restaurant">
+          <div class="mock-browser">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-body">
+              <small>THE GATHERING TABLE</small>
+              <h3>Good food. Great moments.</h3>
+              <p>Explore a place made for sharing.</p>
+              <span class="mock-button">VIEW OUR MENU</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-info"><small>RESTAURANTS</small><h3>Restaurant Website Concept</h3><p>A visual-first direction for restaurants, cafés and hospitality brands.</p><span class="demo-label">Concept demonstration</span></div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section id="process">
+<section class="section">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="kicker">How We Work</div>
-      <h2>Simple Steps. Thoughtful Design.</h2>
-      <p>
-        A straightforward process from the first conversation
-        to your website presentation.
-      </p>
+      <span class="eyebrow">THE STARTNL APPROACH</span>
+      <h2>Why work with <span class="gradient-text">StartNL?</span></h2>
+      <p>A thoughtful process, clear communication and design decisions guided by your business needs.</p>
     </div>
-
-    <div class="process-grid">
-      <div class="process-item reveal">
-        <div class="process-number">01</div>
-        <h3>Understand</h3>
-        <p>
-          We learn about your business, your audience
-          and what you want your website to achieve.
-        </p>
-      </div>
-
-      <div class="process-item reveal">
-        <div class="process-number">02</div>
-        <h3>Design</h3>
-        <p>
-          We plan the layout, visual direction
-          and content around your business needs.
-        </p>
-      </div>
-
-      <div class="process-item reveal">
-        <div class="process-number">03</div>
-        <h3>Present</h3>
-        <p>
-          We share the website for your review
-          and discuss the next steps together.
-        </p>
-      </div>
+    <div class="why-grid">
+      <article class="why-card reveal"><div class="why-number">01</div><b>Designed around you</b><p>Your business is unique. We shape the website around your services, audience and identity.</p></article>
+      <article class="why-card reveal"><div class="why-number">02</div><b>Clear and considered</b><p>We value clean layouts, easy navigation and content that helps visitors understand your business.</p></article>
+      <article class="why-card reveal"><div class="why-number">03</div><b>Mobile-conscious</b><p>Your website should feel natural to explore on the devices your customers use every day.</p></article>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">HOW WE WORK</span>
+      <h2>From first conversation to <span class="gradient-text">online presence.</span></h2>
+      <p>A straightforward process keeps the project focused and makes each step easier to understand.</p>
+    </div>
+    <div class="process-grid">
+      <article class="process-step reveal"><span>01</span><h3>Discover</h3><p>We learn about your business, goals, audience and the kind of website you need.</p></article>
+      <article class="process-step reveal"><span>02</span><h3>Plan & Design</h3><p>We shape the structure, visual direction and content around your requirements.</p></article>
+      <article class="process-step reveal"><span>03</span><h3>Build</h3><p>We create the website and refine its layout across desktop and mobile screens.</p></article>
+      <article class="process-step reveal"><span>04</span><h3>Review & Launch</h3><p>We review the agreed details with you and prepare the website for launch.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
   <div class="container">
     <div class="contact-panel reveal">
-      <div class="contact-content">
-        <div class="kicker">Let's Create Something</div>
-        <h2>Your Next Step Starts Here.</h2>
-        <p>
-          Have a business idea or need a website?
-          Tell us what you have in mind.
-          Let's start a conversation.
-        </p>
-
-        <a class="button-primary"
-           href="mailto:startnlwebstudio@gmail.com?subject=Website%20Enquiry%20-%20StartNL%20Web%20Studio">
-          Email StartNL Web Studio ↗
-        </a>
-
-        <div class="contact-details">
-          Email:
-          <a href="mailto:startnlwebstudio@gmail.com">
-            startnlwebstudio@gmail.com
-          </a>
-          <br>
-          Phone:
-          <a href="tel:+917995438875">+91 79954 38875</a>
-        </div>
-      </div>
+      <span class="eyebrow">YOUR NEXT DIGITAL STEP</span>
+      <h2>Let's create something <span class="gradient-text">meaningful.</span></h2>
+      <p>Have a business idea, need a website or want to refresh your online presence? Tell us a little about it. We'd love to hear from you.</p>
+      <a class="btn btn-primary" href="mailto:startnlwebstudio@gmail.com?subject=Website%20Enquiry%20-%20StartNL%20Web%20Studio">Discuss Your Website ↗</a>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>
-  <div class="container footer-row">
-    <div class="footer-brand">
-      <img src="logo.jpg.jpg" alt="StartNL logo">
-      <span>StartNL Web Studio</span>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-about">
+        <a class="brand" href="#home">
+          <div class="brand-mark"><img src="logo.jpg.jpg" alt="StartNL symbol"></div>
+          <div><div class="brand-name">StartNL</div><div class="brand-sub">WEB STUDIO</div></div>
+        </a>
+        <p>Independent web design studio creating modern digital experiences for businesses ready to build their online presence.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a><a href="#services">Services</a>
+        <a href="#showcase">Showcase</a><a href="#process">Process</a>
+        <a href="mailto:startnlwebstudio@gmail.com">Email us</a>
+        <a href="https://www.instagram.com/startnl.web.studio/" target="_blank" rel="noopener">Instagram ↗</a>
+      </div>
     </div>
-    <span>Your Business. Our Website.</span>
-    <a href="mailto:startnlwebstudio@gmail.com">
-      startnlwebstudio@gmail.com
-    </a>
-    <span>© <span id="year"></span> StartNL Web Studio</span>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> StartNL Web Studio. All rights reserved.</span>
+      <span>Your Business. Our Website.</span>
+    </div>
   </div>
 </footer>
 
 <script>
 /* Mobile navigation */
-const menuButton = document.getElementById('menuButton');
-const navLinks = document.getElementById('navLinks');
-
-menuButton.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
+menuToggle.addEventListener("click",()=>{
+  const open=navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded",String(open));
+  menuToggle.textContent=open?"×":"☰";
+});
+navLinks.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.textContent="☰";
+  });
 });
 
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-/* Scroll reveal */
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+/* Reveal sections as they enter the screen */
+const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
+document.getElementById("year").textContent=new Date().getFullYear();
 
-<script type="module">
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+/* Three.js cinematic 3D hero */
+(async function(){
+  const canvas=document.getElementById("hero3d");
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  try{
+    const THREE=await import("https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js");
+    const scene=new THREE.Scene();
+    const camera=new THREE.PerspectiveCamera(42,1,.1,100);
+    camera.position.set(0,0,10);
 
-/* ======================================================
-   CINEMATIC 3D SPACE BACKGROUND
-====================================================== */
-const universeCanvas = document.getElementById('universe');
-let universeRenderer;
+    const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.7));
+    renderer.setClearColor(0x000000,0);
 
-try {
-  universeRenderer = new THREE.WebGLRenderer({
-    canvas: universeCanvas,
-    alpha: true,
-    antialias: true
-  });
-} catch (error) {
-  console.warn('Background 3D is unavailable:', error);
-}
+    scene.add(new THREE.AmbientLight(0x7daeff,1.5));
+    const keyLight=new THREE.PointLight(0x48caff,95,30);
+    keyLight.position.set(3,3,5);scene.add(keyLight);
+    const blueLight=new THREE.PointLight(0x185bff,85,25);
+    blueLight.position.set(-4,-2,2);scene.add(blueLight);
 
-if (universeRenderer) {
-  const universeScene = new THREE.Scene();
-  const universeCamera = new THREE.PerspectiveCamera(55, 1, 0.1, 100);
-  universeCamera.position.z = 12;
+    const group=new THREE.Group();scene.add(group);
 
-  universeRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
-  universeRenderer.setClearColor(0x000000, 0);
+    const sphereGeometry=new THREE.SphereGeometry(1.65,96,96);
+    const sphereMaterial=new THREE.MeshPhysicalMaterial({
+      color:0x0755c9,metalness:.55,roughness:.24,
+      clearcoat:1,clearcoatRoughness:.16,
+      emissive:0x031c56,emissiveIntensity:.35
+    });
+    const planet=new THREE.Mesh(sphereGeometry,sphereMaterial);
+    group.add(planet);
 
-  const starCount = 1700;
-  const starPositions = new Float32Array(starCount * 3);
-  const starSizes = new Float32Array(starCount);
-
-  for (let i = 0; i < starCount; i++) {
-    starPositions[i * 3] = (Math.random() - 0.5) * 42;
-    starPositions[i * 3 + 1] = (Math.random() - 0.5) * 25;
-    starPositions[i * 3 + 2] = (Math.random() - 0.5) * 25;
-    starSizes[i] = 0.5 + Math.random() * 1.5;
-  }
-
-  const starGeometry = new THREE.BufferGeometry();
-  starGeometry.setAttribute(
-    'position',
-    new THREE.BufferAttribute(starPositions, 3)
-  );
-  starGeometry.setAttribute(
-    'size',
-    new THREE.BufferAttribute(starSizes, 1)
-  );
-
-  const starMaterial = new THREE.PointsMaterial({
-    color: 0x9bcfff,
-    size: 0.045,
-    transparent: true,
-    opacity: 0.8,
-    sizeAttenuation: true
-  });
-
-  const starField = new THREE.Points(starGeometry, starMaterial);
-  universeScene.add(starField);
-
-  // Soft distant light spheres
-  const glowGroup = new THREE.Group();
-  universeScene.add(glowGroup);
-
-  for (let i = 0; i < 8; i++) {
-    const glow = new THREE.Mesh(
-      new THREE.SphereGeometry(0.035 + Math.random() * 0.08, 12, 12),
-      new THREE.MeshBasicMaterial({
-        color: i % 2 ? 0x4b9fff : 0x79ddff,
-        transparent: true,
-        opacity: 0.6
-      })
+    const atmosphere=new THREE.Mesh(
+      new THREE.SphereGeometry(1.73,64,64),
+      new THREE.MeshBasicMaterial({color:0x258bff,transparent:true,opacity:.12,side:THREE.BackSide})
     );
+    group.add(atmosphere);
 
-    glow.position.set(
-      (Math.random() - 0.5) * 22,
-      (Math.random() - 0.5) * 12,
-      -2 - Math.random() * 7
+    const ringMaterial=new THREE.MeshStandardMaterial({
+      color:0x54d7ff,metalness:.75,roughness:.22,
+      emissive:0x168bd8,emissiveIntensity:.55
+    });
+    const ring=new THREE.Mesh(new THREE.TorusGeometry(2.25,.018,12,180),ringMaterial);
+    ring.rotation.set(1.05,.2,-.35);group.add(ring);
+
+    const ring2=new THREE.Mesh(
+      new THREE.TorusGeometry(2.55,.008,8,180),
+      new THREE.MeshBasicMaterial({color:0x327fff,transparent:true,opacity:.75})
     );
+    ring2.rotation.set(1.2,.1,.3);group.add(ring2);
 
-    glowGroup.add(glow);
-  }
+    const smallOrb=new THREE.Mesh(
+      new THREE.SphereGeometry(.14,32,32),
+      new THREE.MeshStandardMaterial({color:0x60e4ff,emissive:0x159cff,emissiveIntensity:1.3,metalness:.25,roughness:.2})
+    );
+    smallOrb.position.set(-2.1,.6,.3);group.add(smallOrb);
 
-  function resizeUniverse() {
-    const width = universeCanvas.clientWidth;
-    const height = universeCanvas.clientHeight;
-    if (!width || !height) return;
-
-    universeCamera.aspect = width / height;
-    universeCamera.updateProjectionMatrix();
-    universeRenderer.setSize(width, height, false);
-  }
-
-  window.addEventListener('resize', resizeUniverse);
-  resizeUniverse();
-
-  const universeClock = new THREE.Clock();
-
-  function animateUniverse() {
-    requestAnimationFrame(animateUniverse);
-
-    const time = universeClock.getElapsedTime();
-
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      starField.rotation.y = time * 0.006;
-      starField.rotation.x = Math.sin(time * 0.04) * 0.015;
-      glowGroup.rotation.y = -time * 0.008;
+    const starsGeometry=new THREE.BufferGeometry();
+    const starCount=650;
+    const positions=new Float32Array(starCount*3);
+    for(let i=0;i<starCount;i++){
+      positions[i*3]=(Math.random()-.5)*19;
+      positions[i*3+1]=(Math.random()-.5)*11;
+      positions[i*3+2]=(Math.random()-.5)*7-2;
     }
+    starsGeometry.setAttribute("position",new THREE.BufferAttribute(positions,3));
+    const stars=new THREE.Points(starsGeometry,new THREE.PointsMaterial({
+      color:0x8acfff,size:.025,transparent:true,opacity:.8
+    }));
+    scene.add(stars);
 
-    universeRenderer.render(universeScene, universeCamera);
-  }
-
-  animateUniverse();
-}
-
-/* ======================================================
-   MAIN 3D PLANET
-====================================================== */
-const planetCanvas = document.getElementById('planet-scene');
-let planetRenderer;
-
-try {
-  planetRenderer = new THREE.WebGLRenderer({
-    canvas: planetCanvas,
-    alpha: true,
-    antialias: true
-  });
-} catch (error) {
-  console.warn('Planet 3D is unavailable:', error);
-}
-
-if (planetRenderer) {
-  const scene = new THREE.Scene();
-
-  const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-  camera.position.set(0, 0, 8.5);
-
-  planetRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.7));
-  planetRenderer.setClearColor(0x000000, 0);
-
-  const planetGroup = new THREE.Group();
-  scene.add(planetGroup);
-
-  // Procedural planet surface
-  const planetMaterial = new THREE.ShaderMaterial({
-    uniforms: {
-      time: { value: 0 }
-    },
-    vertexShader: `
-      varying vec3 vNormal;
-      varying vec3 vPosition;
-
-      void main() {
-        vNormal = normalize(normalMatrix * normal);
-        vPosition = position;
-
-        gl_Position = projectionMatrix *
-          modelViewMatrix * vec4(position, 1.0);
-      }
-    `,
-    fragmentShader: `
-      uniform float time;
-      varying vec3 vNormal;
-      varying vec3 vPosition;
-
-      void main() {
-        vec3 normal = normalize(vNormal);
-
-        float wave1 = sin(vPosition.x * 4.0 + time * 0.18);
-        float wave2 = cos(vPosition.y * 5.0 - time * 0.12);
-        float wave3 = sin(vPosition.z * 5.0 + time * 0.10);
-
-        float pattern = (wave1 + wave2 + wave3) / 3.0;
-
-        vec3 deepBlue = vec3(0.015, 0.07, 0.23);
-        vec3 oceanBlue = vec3(0.035, 0.27, 0.62);
-        vec3 brightBlue = vec3(0.18, 0.65, 0.95);
-
-        vec3 color = mix(deepBlue, oceanBlue, smoothstep(-0.5, 0.5, pattern));
-        color = mix(color, brightBlue, smoothstep(0.45, 0.9, pattern) * 0.45);
-
-        vec3 lightDirection = normalize(vec3(-0.7, 0.8, 1.0));
-        float light = max(dot(normal, lightDirection), 0.0);
-
-        float rim = pow(1.0 - max(dot(normal, vec3(0.0, 0.0, 1.0)), 0.0), 2.4);
-
-        color *= 0.45 + light * 0.85;
-        color += vec3(0.05, 0.32, 0.75) * rim * 0.65;
-
-        gl_FragColor = vec4(color, 1.0);
-      }
-    `
-  });
-
-  const planet = new THREE.Mesh(
-    new THREE.SphereGeometry(1.65, 96, 96),
-    planetMaterial
-  );
-  planetGroup.add(planet);
-
-  // Outer atmosphere
-  const atmosphere = new THREE.Mesh(
-    new THREE.SphereGeometry(1.78, 64, 64),
-    new THREE.MeshBasicMaterial({
-      color: 0x3a9fff,
-      transparent: true,
-      opacity: 0.10,
-      side: THREE.BackSide
-    })
-  );
-  planetGroup.add(atmosphere);
-
-  // Bright atmospheric edge
-  const edge = new THREE.Mesh(
-    new THREE.SphereGeometry(1.71, 64, 64),
-    new THREE.MeshBasicMaterial({
-      color: 0x56caff,
-      transparent: true,
-      opacity: 0.08,
-      side: THREE.BackSide
-    })
-  );
-  planetGroup.add(edge);
-
-  // Planet ring one
-  const ringOne = new THREE.Mesh(
-    new THREE.TorusGeometry(2.25, 0.018, 12, 180),
-    new THREE.MeshBasicMaterial({
-      color: 0x78dfff,
-      transparent: true,
-      opacity: 0.72
-    })
-  );
-  ringOne.rotation.x = 1.18;
-  ringOne.rotation.y = 0.22;
-  planetGroup.add(ringOne);
-
-  // Planet ring two
-  const ringTwo = new THREE.Mesh(
-    new THREE.TorusGeometry(2.58, 0.009, 8, 180),
-    new THREE.MeshBasicMaterial({
-      color: 0x398dff,
-      transparent: true,
-      opacity: 0.45
-    })
-  );
-  ringTwo.rotation.x = 1.34;
-  ringTwo.rotation.y = -0.3;
-  planetGroup.add(ringTwo);
-
-  // Orbiting moon
-  const moon = new THREE.Mesh(
-    new THREE.SphereGeometry(0.17, 32, 32),
-    new THREE.MeshStandardMaterial({
-      color: 0x9beaff,
-      emissive: 0x267dff,
-      emissiveIntensity: 1.3,
-      roughness: 0.35,
-      metalness: 0.25
-    })
-  );
-  scene.add(moon);
-
-  // Lighting
-  scene.add(new THREE.AmbientLight(0x8abaff, 1.1));
-
-  const keyLight = new THREE.PointLight(0x58bdff, 95, 30);
-  keyLight.position.set(4, 3, 5);
-  scene.add(keyLight);
-
-  const fillLight = new THREE.PointLight(0x234fff, 65, 25);
-  fillLight.position.set(-4, -2, 1);
-  scene.add(fillLight);
-
-  // Fine particle field around the planet
-  const particleCount = 500;
-  const particlePositions = new Float32Array(particleCount * 3);
-
-  for (let i = 0; i < particleCount; i++) {
-    const radius = 2.8 + Math.random() * 2.2;
-    const angle = Math.random() * Math.PI * 2;
-    const height = (Math.random() - 0.5) * 2.5;
-
-    particlePositions[i * 3] = Math.cos(angle) * radius;
-    particlePositions[i * 3 + 1] = height;
-    particlePositions[i * 3 + 2] = Math.sin(angle) * radius;
-  }
-
-  const particleGeometry = new THREE.BufferGeometry();
-  particleGeometry.setAttribute(
-    'position',
-    new THREE.BufferAttribute(particlePositions, 3)
-  );
-
-  const particles = new THREE.Points(
-    particleGeometry,
-    new THREE.PointsMaterial({
-      color: 0x8fdcff,
-      size: 0.025,
-      transparent: true,
-      opacity: 0.65
-    })
-  );
-  planetGroup.add(particles);
-
-  // Responsive canvas sizing
-  function resizePlanet() {
-    const width = planetCanvas.clientWidth;
-    const height = planetCanvas.clientHeight;
-    if (!width || !height) return;
-
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    planetRenderer.setSize(width, height, false);
-  }
-
-  window.addEventListener('resize', resizePlanet);
-  resizePlanet();
-
-  // Pointer interaction: subtle planet movement
-  let targetX = 0;
-  let targetY = 0;
-  let currentX = 0;
-  let currentY = 0;
-
-  const sceneWrap = document.querySelector('.scene-wrap');
-
-  sceneWrap.addEventListener('pointermove', event => {
-    const rect = sceneWrap.getBoundingClientRect();
-    targetX = ((event.clientX - rect.left) / rect.width - 0.5) * 0.35;
-    targetY = ((event.clientY - rect.top) / rect.height - 0.5) * 0.25;
-  });
-
-  sceneWrap.addEventListener('pointerleave', () => {
-    targetX = 0;
-    targetY = 0;
-  });
-
-  const clock = new THREE.Clock();
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function animatePlanet() {
-    requestAnimationFrame(animatePlanet);
-
-    const time = clock.getElapsedTime();
-
-    if (!reducedMotion) {
-      planetMaterial.uniforms.time.value = time;
-
-      currentX += (targetY - currentX) * 0.025;
-      currentY += (targetX - currentY) * 0.025;
-
-      planetGroup.rotation.y = time * 0.075 + currentY;
-      planetGroup.rotation.x = Math.sin(time * 0.12) * 0.035 + currentX;
-
-      ringOne.rotation.z = time * 0.035;
-      ringTwo.rotation.z = -time * 0.025;
-      particles.rotation.y = -time * 0.025;
-
-      moon.position.set(
-        Math.cos(time * 0.34) * 3.1,
-        Math.sin(time * 0.34) * 1.1,
-        Math.sin(time * 0.34) * 1.4
-      );
+    function resize(){
+      const w=canvas.clientWidth||window.innerWidth;
+      const h=canvas.clientHeight||window.innerHeight;
+      renderer.setSize(w,h,false);
+      camera.aspect=w/h;camera.updateProjectionMatrix();
+      group.position.x=w<700?0:1.5;
+      group.scale.setScalar(w<700?.66:1);
+      camera.position.z=w<700?11:10;
     }
+    window.addEventListener("resize",resize);resize();
 
-    planetRenderer.render(scene, camera);
+    let pointerX=0,pointerY=0;
+    window.addEventListener("pointermove",e=>{
+      pointerX=(e.clientX/window.innerWidth-.5);
+      pointerY=(e.clientY/window.innerHeight-.5);
+    },{passive:true});
+
+    const clock=new THREE.Clock();
+    function animate(){
+      if(!document.hidden){
+        const t=clock.getElapsedTime();
+        if(!reduceMotion){
+          group.rotation.y=t*.075+pointerX*.12;
+          group.rotation.x=Math.sin(t*.22)*.045+pointerY*.06;
+          ring.rotation.z=-.35+Math.sin(t*.25)*.035;
+          smallOrb.position.x=-2.1+Math.sin(t*.7)*.12;
+          stars.rotation.y=t*.008;
+        }
+        renderer.render(scene,camera);
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  }catch(error){
+    console.warn("3D scene could not load. The hero background will remain visible.",error);
   }
-
-  animatePlanet();
-}
+})();
 </script>
-
 </body>
 </html>
