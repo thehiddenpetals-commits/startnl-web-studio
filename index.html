@@ -2,517 +2,823 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StartNL Web Studio creates modern, responsive websites and landing pages for small businesses.">
-  <title>StartNL Web Studio | Websites That Work For You</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<title>StartNL Web Studio | Beyond Ordinary</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #080d18;
-      color: #ffffff;
-      line-height: 1.7;
-    }
+<meta name="description" content="StartNL Web Studio creates modern, responsive websites for small businesses and growing brands.">
 
-    :root {
-      --blue: #3185ff;
-      --dark: #080d18;
-      --light: #b8c5d9;
-      --card: #111b2d;
-    }
+<style>
+:root {
+  --bg: #030713;
+  --blue: #168cff;
+  --cyan: #83e4ff;
+  --purple: #7654ff;
+  --white: #f5f8ff;
+  --muted: #a5b2c9;
+  --glass: rgba(16, 34, 65, .65);
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header {
-      background: #0b1220;
-      border-bottom: 1px solid #1c2b43;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-    nav {
-      min-height: 78px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
+/* GALAXY BACKGROUND */
 
-    .logo span {
-      color: var(--blue);
-    }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(ellipse at 15% 15%, #102c62 0, transparent 38%),
+    radial-gradient(ellipse at 85% 45%, #17245d 0, transparent 35%),
+    radial-gradient(ellipse at 50% 100%, #071d39 0, transparent 45%),
+    #030713;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      font-size: 14px;
-      color: #d3dbea;
-    }
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  opacity: .7;
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 90px 80px, #a8dcff, transparent),
+    radial-gradient(2px 2px at 160px 140px, #fff, transparent),
+    radial-gradient(1px 1px at 220px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 280px 180px, #8bcaff, transparent);
+  background-size: 320px 220px;
+  animation: starMove 35s linear infinite;
+}
 
-    .nav-links a:hover {
-      color: var(--blue);
-    }
+@keyframes starMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-220px); }
+}
 
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(ellipse at 85% 30%, #163b70 0%, transparent 40%),
-        linear-gradient(135deg, #080d18, #101c32);
-    }
+/* NAVIGATION */
 
-    .hero-content {
-      max-width: 760px;
-      padding: 100px 0;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 17px 7%;
+  background: rgba(3, 7, 19, .85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(120, 180, 255, .13);
+}
 
-    .tag {
-      display: inline-block;
-      border: 1px solid #315b91;
-      color: #8bbcff;
-      padding: 7px 16px;
-      border-radius: 30px;
-      font-size: 13px;
-      margin-bottom: 25px;
-    }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 
-    h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      line-height: 1.12;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-    }
+.logo-text {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
 
-    h1 span {
-      color: var(--blue);
-    }
+.logo-text span {
+  color: var(--blue);
+}
 
-    .hero p {
-      color: var(--light);
-      font-size: 18px;
-      max-width: 620px;
-      margin-bottom: 35px;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: 13px;
+  color: #c6d4e9;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 27px;
-      border-radius: 6px;
-      background: var(--blue);
-      color: white;
-      font-weight: bold;
-      transition: .3s;
-    }
+.nav-links a {
+  transition: .3s;
+}
 
-    .btn:hover {
-      background: #1768dc;
-      transform: translateY(-2px);
-    }
+.nav-links a:hover {
+  color: var(--cyan);
+}
 
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #58708f;
-      margin-left: 10px;
-    }
+/* HERO SECTION */
 
-    section {
-      padding: 90px 0;
-    }
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 75px 7%;
+  position: relative;
+  overflow: hidden;
+}
 
-    .section-title {
-      font-size: 36px;
-      margin-bottom: 15px;
-      letter-spacing: -1px;
-    }
+.hero-content {
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
 
-    .section-title span {
-      color: var(--blue);
-    }
+/* YOUR ACTUAL LOGO */
 
-    .section-intro {
-      color: var(--light);
-      max-width: 650px;
-      margin-bottom: 40px;
-    }
+.hero-logo {
+  width: 290px;
+  max-width: 75%;
+  height: auto;
+  display: block;
+  margin: 0 auto 35px;
+  border-radius: 18px;
+  background: white;
+  box-shadow:
+    0 0 35px rgba(72, 170, 255, .28),
+    0 0 90px rgba(70, 90, 255, .13);
+  animation: logoAppear 1.2s ease both;
+}
 
-    .about {
-      background: #0c1423;
-    }
+@keyframes logoAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
-    .about-text {
-      max-width: 850px;
-      color: var(--light);
-      font-size: 17px;
-    }
+.eyebrow {
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  margin-bottom: 20px;
+}
 
-    .services-grid,
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+h1 {
+  font-size: clamp(43px, 8vw, 88px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
 
-    .service-card,
-    .portfolio-card {
-      background: var(--card);
-      border: 1px solid #23334d;
-      padding: 30px;
-      border-radius: 12px;
-      transition: .3s;
-    }
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    #ffffff,
+    #63baff,
+    #9b9cff,
+    #ffffff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    .service-card:hover,
-    .portfolio-card:hover {
-      border-color: var(--blue);
-      transform: translateY(-5px);
-    }
+.hero-description {
+  color: var(--muted);
+  max-width: 630px;
+  margin: 0 auto 32px;
+  font-size: 17px;
+}
 
-    .service-icon {
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-    .service-card h3,
-    .portfolio-card h3 {
-      margin-bottom: 12px;
-      font-size: 20px;
-    }
+.btn {
+  display: inline-block;
+  padding: 14px 27px;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: .3s;
+}
 
-    .service-card p,
-    .portfolio-card p {
-      color: var(--light);
-      font-size: 14px;
-    }
+.btn-primary {
+  color: #03101f;
+  background: linear-gradient(110deg, #69caff, #b0eaff);
+  box-shadow: 0 0 28px rgba(72, 170, 255, .3);
+}
 
-    .portfolio {
-      background: #0c1423;
-    }
+.btn-secondary {
+  color: white;
+  border: 1px solid rgba(135, 190, 255, .5);
+}
 
-    .portfolio-card {
-      padding: 0;
-      overflow: hidden;
-    }
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(72, 170, 255, .4);
+}
 
-    .portfolio-visual {
-      height: 155px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #142c50, #1c579b);
-      font-size: 34px;
-      color: #a9d0ff;
-    }
+/* ORBIT EFFECT */
 
-    .portfolio-info {
-      padding: 25px;
-    }
+.orbit {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(100, 180, 255, .13);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow:
+    0 0 90px rgba(50, 120, 255, .08),
+    inset 0 0 70px rgba(50, 120, 255, .06);
+}
 
-    .demo-label {
-      color: #8bbcff;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
+.orbit::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #8ce4ff;
+  border-radius: 50%;
+  top: 35px;
+  left: 90px;
+  box-shadow: 0 0 25px 8px #48aaff;
+}
 
-    .contact {
-      text-align: center;
-      background:
-        radial-gradient(ellipse at center, #17365e, transparent 70%),
-        #080d18;
-    }
+/* COMMON SECTIONS */
 
-    .contact .section-intro {
-      margin: 0 auto 30px;
-    }
+section {
+  padding: 95px 7%;
+  position: relative;
+}
 
-    .email {
-      display: inline-block;
-      margin-top: 20px;
-      color: #8bbcff;
-      font-size: 18px;
-      overflow-wrap: anywhere;
-    }
+.section-heading {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
 
-    footer {
-      padding: 28px 0;
-      text-align: center;
-      border-top: 1px solid #24324a;
-      color: #8c9bb2;
-      font-size: 13px;
-    }
+.section-heading h2 {
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
 
-    @media (max-width: 760px) {
-      nav {
-        flex-direction: column;
-        padding: 18px 0;
-      }
+.section-heading p {
+  color: var(--muted);
+}
 
-      .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-      }
+/* ABOUT */
 
-      .services-grid,
-      .portfolio-grid {
-        grid-template-columns: 1fr;
-      }
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
 
-      section {
-        padding: 65px 0;
-      }
+.about-visual {
+  min-height: 340px;
+  border: 1px solid rgba(100, 180, 255, .2);
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 50%, #164a83 0, #101d43 35%, #050b1b 75%);
+  box-shadow: inset 0 0 60px #398bff22, 0 0 50px #2477d522;
+  overflow: hidden;
+}
 
-      .hero {
-        min-height: 520px;
-      }
+.planet {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 25%,
+    #c2eaff,
+    #3284c9 35%,
+    #102653 75%
+  );
+  box-shadow: 0 0 65px #4caaff88;
+  position: relative;
+}
 
-      .btn {
-        margin: 5px 5px 5px 0;
-      }
-    }
-  </style>
+.planet::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 48px;
+  border: 3px solid #80cfff99;
+  border-radius: 50%;
+  left: -35px;
+  top: 48px;
+  transform: rotate(-20deg);
+}
+
+.about-copy h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.about-copy p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+/* SERVICES */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  padding: 32px;
+  min-height: 220px;
+  border: 1px solid rgba(115, 175, 255, .17);
+  border-radius: 20px;
+  background: linear-gradient(
+    145deg,
+    rgba(23, 43, 79, .75),
+    rgba(7, 14, 31, .85)
+  );
+  transition: .35s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(100, 190, 255, .7);
+  box-shadow: 0 15px 45px rgba(29, 116, 220, .18);
+}
+
+.card-icon {
+  font-size: 30px;
+  color: var(--cyan);
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* PORTFOLIO */
+
+.portfolio-card {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+  border-radius: 24px;
+  border: 1px solid rgba(115, 175, 255, .2);
+  background: linear-gradient(145deg, #101e3b, #070d1d);
+}
+
+.portfolio-screen {
+  max-width: 520px;
+  margin: 0 auto 25px;
+  padding: 30px 20px;
+  border-radius: 14px;
+  background: linear-gradient(130deg, #173c69, #10152f);
+  border: 1px solid #7acbff55;
+  box-shadow: 0 0 35px #368de522;
+}
+
+.portfolio-screen h3 {
+  font-size: 24px;
+  color: white;
+}
+
+.screen-lines {
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, #5dbbff55 30%, transparent 30%),
+    linear-gradient(#8acfff22 12px, transparent 12px);
+  background-size: 100% 100%, 100% 28px;
+}
+
+.portfolio-card p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+  background: radial-gradient(
+    ellipse at center,
+    #102b56 0,
+    transparent 68%
+  );
+}
+
+.contact h2 {
+  font-size: clamp(32px, 5vw, 54px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.contact > p {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  color: #c6d8ef;
+  font-size: 14px;
+}
+
+.contact-details a:hover {
+  color: var(--cyan);
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 28px 7%;
+  color: #8495b1;
+  border-top: 1px solid rgba(120, 180, 255, .12);
+  font-size: 12px;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 760px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    gap: 13px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: 80vh;
+    padding: 65px 6%;
+  }
+
+  .hero-logo {
+    width: 245px;
+  }
+
+  .orbit {
+    width: 260px;
+    height: 260px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 75px 6%;
+  }
+
+  .about-copy h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 430px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero-logo {
+    width: 220px;
+  }
+
+  .portfolio-card {
+    padding: 22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="container">
-    <nav>
-      <a href="#home" class="logo">Start<span>NL</span></a>
+<div class="stars"></div>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
+<!-- NAVIGATION -->
+
+<header>
+  <nav>
+    <a class="logo-text" href="#home">Start<span>NL</span></a>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
 <main>
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content">
-        <div class="tag">WELCOME TO STARTNL WEB STUDIO</div>
 
-        <h1>
-          Your Business Deserves<br>
-          <span>More Than Just a Page.</span>
-        </h1>
+<!-- HERO / FIRST SCREEN -->
 
-        <p>
-          We create modern, attractive and responsive websites
-          that help small businesses build their online presence
-          and connect with more customers.
-        </p>
+<section class="hero" id="home">
 
-        <a href="#services" class="btn">Explore Our Services</a>
-        <a href="#contact" class="btn btn-outline">Let's Connect</a>
-      </div>
+  <div class="orbit"></div>
+
+  <div class="hero-content">
+
+    <img
+      src="logo.jpg"
+      alt="StartNL Web Studio Logo"
+      class="hero-logo"
+    >
+
+    <div class="eyebrow">
+      A new digital universe begins here
     </div>
-  </section>
 
-  <section class="about" id="about">
-    <div class="container">
-      <h2 class="section-title">About <span>StartNL</span></h2>
+    <h1>
+      Beyond ordinary.<br>
+      <span class="gradient-text">Built to stand out.</span>
+    </h1>
 
-      <p class="about-text">
-        StartNL Web Studio is a small independent website design
-        initiative focused on helping businesses establish a
-        professional digital presence.
+    <p class="hero-description">
+      Your business deserves more than just a page.
+      We create modern, responsive websites that help
+      businesses build their presence and connect with people.
+    </p>
 
-        We believe every business deserves a website that reflects
-        its identity, communicates its services and works smoothly
-        across devices.
-
-        Our approach is simple: thoughtful design, clear
-        communication and websites built around each business's needs.
-      </p>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">What We <span>Offer</span></h2>
-
-      <p class="section-intro">
-        Practical website solutions for businesses looking
-        to build or improve their online presence.
-      </p>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="service-icon">✦</div>
-          <h3>Business Websites</h3>
-          <p>
-            Professional website designs that introduce your
-            business, services and brand to customers.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">▣</div>
-          <h3>Landing Pages</h3>
-          <p>
-            Clean, focused landing pages designed to communicate
-            your message and encourage customer enquiries.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⌘</div>
-          <h3>Responsive Design</h3>
-          <p>
-            Website layouts designed to work across mobile phones,
-            tablets and desktop screens.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◇</div>
-          <h3>Website Redesign</h3>
-          <p>
-            Refreshing existing website layouts with a cleaner
-            and more modern appearance.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">⚙</div>
-          <h3>Website Updates</h3>
-          <p>
-            Basic content, layout and website maintenance updates
-            based on project requirements.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">◎</div>
-          <h3>Small Business Solutions</h3>
-          <p>
-            Simple digital experiences designed around the needs
-            of small businesses and independent professionals.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="portfolio" id="portfolio">
-    <div class="container">
-      <h2 class="section-title">Our <span>Work</span></h2>
-
-      <p class="section-intro">
-        We are building our project portfolio.
-        More website demonstrations and design work will
-        be showcased here as they become available.
-      </p>
-
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-          <div class="portfolio-visual">✦</div>
-          <div class="portfolio-info">
-            <div class="demo-label">Concept Project</div>
-            <h3>Small Business Website</h3>
-            <p>
-              A demonstration of a modern website concept
-              for a small business.
-            </p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-visual">▣</div>
-          <div class="portfolio-info">
-            <div class="demo-label">Coming Soon</div>
-            <h3>Creative Landing Page</h3>
-            <p>
-              A focused landing page concept with a clean
-              layout and responsive design.
-            </p>
-          </div>
-        </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-visual">◇</div>
-          <div class="portfolio-info">
-            <div class="demo-label">Coming Soon</div>
-            <h3>Business Web Experience</h3>
-            <p>
-              More website concepts and demonstrations
-              will be added as projects develop.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2 class="section-title">Let's Build Something <span>Great.</span></h2>
-
-      <p class="section-intro">
-        Have a business that needs a website?
-        We'd love to hear about your project.
-        Get in touch with StartNL Web Studio.
-      </p>
-
-      <a href="mailto:startnlwebstudio@gmail.com" class="btn">
-        Email Us
+    <div class="actions">
+      <a class="btn btn-primary" href="#contact">
+        Let's create something
       </a>
 
-      <br>
-
-      <a class="email" href="mailto:startnlwebstudio@gmail.com">
-        startnlwebstudio@gmail.com
+      <a class="btn btn-secondary" href="#services">
+        Explore our universe
       </a>
-      <br>
-
-<a class="email" href="tel:+917995438875">
-  +91 7995438875
-</a>
     </div>
-  </section>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="about">
+
+    <div class="about-visual">
+      <div class="planet"></div>
+    </div>
+
+    <div class="about-copy">
+
+      <div class="eyebrow">Welcome to StartNL</div>
+
+      <h2>
+        Every great idea deserves its own space.
+      </h2>
+
+      <p>
+        StartNL Web Studio is a growing creative web studio
+        focused on helping businesses establish a modern
+        online presence.
+      </p>
+
+      <p>
+        From first impressions to the details that matter,
+        we aim to make every website clear, attractive
+        and easy to use.
+      </p>
+
+      <p>
+        Our goal is simple: bring your business closer
+        to the digital world.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">What we create</div>
+
+    <h2>
+      Digital experiences that move you forward.
+    </h2>
+
+    <p>
+      Thoughtful website solutions for businesses
+      ready to grow online.
+    </p>
+
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+      <div class="card-icon">✦</div>
+      <h3>Business Websites</h3>
+      <p>
+        Professional websites that introduce your business
+        and make it easy for customers to find you.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">◈</div>
+      <h3>Landing Pages</h3>
+      <p>
+        Focused and attractive pages that present
+        your services, products or special offers.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">⌘</div>
+      <h3>Website Refresh</h3>
+      <p>
+        Modern design improvements to help an existing
+        website feel clearer and more welcoming.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">◎</div>
+      <h3>Responsive Design</h3>
+      <p>
+        Layouts designed to work across phones,
+        tablets and desktop screens.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">✧</div>
+      <h3>Website Setup</h3>
+      <p>
+        Help getting a simple website structure
+        and essential pages ready for your business.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-icon">↗</div>
+      <h3>Website Updates</h3>
+      <p>
+        Practical content and layout updates
+        to keep your website useful and current.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+
+  <div class="section-heading">
+
+    <div class="eyebrow">Our creative space</div>
+
+    <h2>
+      Ideas becoming experiences.
+    </h2>
+
+    <p>
+      Explore our design direction and sample website concepts.
+    </p>
+
+  </div>
+
+  <div class="portfolio-card">
+
+    <div class="portfolio-screen">
+      <h3>YOUR BRAND.<br>YOUR DIGITAL SPACE.</h3>
+      <div class="screen-lines"></div>
+    </div>
+
+    <h3>Website Concepts & Demos</h3>
+
+    <p>
+      Design concepts created to explore how a business
+      can present itself online.
+    </p>
+
+    <a class="btn btn-secondary" href="#contact">
+      Discuss a website
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="eyebrow">
+    Your next chapter starts here
+  </div>
+
+  <h2>
+    Ready to build your space<br>
+    <span class="gradient-text">on the internet?</span>
+  </h2>
+
+  <p>
+    Tell us about your business and the website
+    you have in mind.
+  </p>
+
+  <a
+    class="btn btn-primary"
+    href="mailto:startnlwebstudio@gmail.com"
+  >
+    Start a conversation
+  </a>
+
+  <div class="contact-details">
+
+    <a href="mailto:startnlwebstudio@gmail.com">
+      startnlwebstudio@gmail.com
+    </a>
+
+    <a href="tel:+917995438875">
+      +91 7995438875
+    </a>
+
+    <a
+      href="https://www.instagram.com/StartNL.web.studio/"
+      target="_blank"
+      rel="noopener"
+    >
+      Instagram
+    </a>
+
+  </div>
+</section>
+
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-  <div class="container">
-    © 2026 StartNL Web Studio. All rights reserved.
-    <br>
-    Simple Ideas. Strong Digital Beginnings.
-  </div>
+  © 2026 StartNL Web Studio. Built beyond ordinary.
 </footer>
 
 </body>
