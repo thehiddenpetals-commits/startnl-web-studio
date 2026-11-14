@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StartNL Web Studio creates modern, responsive websites and landing pages for small businesses.">
+  <title>StartNL Web Studio | Websites That Work For You</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080d18;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    :root {
+      --blue: #3185ff;
+      --dark: #080d18;
+      --light: #b8c5d9;
+      --card: #111b2d;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    header {
+      background: #0b1220;
+      border-bottom: 1px solid #1c2b43;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 78px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+      color: #d3dbea;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 30%, #163b70 0%, transparent 40%),
+        linear-gradient(135deg, #080d18, #101c32);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 100px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #315b91;
+      color: #8bbcff;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      color: var(--light);
+      font-size: 18px;
+      max-width: 620px;
+      margin-bottom: 35px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 27px;
+      border-radius: 6px;
+      background: var(--blue);
+      color: white;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: #1768dc;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid #58708f;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .section-title span {
+      color: var(--blue);
+    }
+
+    .section-intro {
+      color: var(--light);
+      max-width: 650px;
+      margin-bottom: 40px;
+    }
+
+    .about {
+      background: #0c1423;
+    }
+
+    .about-text {
+      max-width: 850px;
+      color: var(--light);
+      font-size: 17px;
+    }
+
+    .services-grid,
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card,
+    .portfolio-card {
+      background: var(--card);
+      border: 1px solid #23334d;
+      padding: 30px;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .service-card:hover,
+    .portfolio-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3,
+    .portfolio-card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .service-card p,
+    .portfolio-card p {
+      color: var(--light);
+      font-size: 14px;
+    }
+
+    .portfolio {
+      background: #0c1423;
+    }
+
+    .portfolio-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .portfolio-visual {
+      height: 155px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #142c50, #1c579b);
+      font-size: 34px;
+      color: #a9d0ff;
+    }
+
+    .portfolio-info {
+      padding: 25px;
+    }
+
+    .demo-label {
+      color: #8bbcff;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at center, #17365e, transparent 70%),
+        #080d18;
+    }
+
+    .contact .section-intro {
+      margin: 0 auto 30px;
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 20px;
+      color: #8bbcff;
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      border-top: 1px solid #24324a;
+      color: #8c9bb2;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 520px;
+      }
+
+      .btn {
+        margin: 5px 5px 5px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">Start<span>NL</span></a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="tag">WELCOME TO STARTNL WEB STUDIO</div>
+
+        <h1>
+          Your Business Deserves<br>
+          <span>More Than Just a Page.</span>
+        </h1>
+
+        <p>
+          We create modern, attractive and responsive websites
+          that help small businesses build their online presence
+          and connect with more customers.
+        </p>
+
+        <a href="#services" class="btn">Explore Our Services</a>
+        <a href="#contact" class="btn btn-outline">Let's Connect</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>StartNL</span></h2>
+
+      <p class="about-text">
+        StartNL Web Studio is a small independent website design
+        initiative focused on helping businesses establish a
+        professional digital presence.
+
+        We believe every business deserves a website that reflects
+        its identity, communicates its services and works smoothly
+        across devices.
+
+        Our approach is simple: thoughtful design, clear
+        communication and websites built around each business's needs.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">What We <span>Offer</span></h2>
+
+      <p class="section-intro">
+        Practical website solutions for businesses looking
+        to build or improve their online presence.
+      </p>
+
+      <div class="services-grid">
+
+        <div class="service-card">
+          <div class="service-icon">✦</div>
+          <h3>Business Websites</h3>
+          <p>
+            Professional website designs that introduce your
+            business, services and brand to customers.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">▣</div>
+          <h3>Landing Pages</h3>
+          <p>
+            Clean, focused landing pages designed to communicate
+            your message and encourage customer enquiries.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⌘</div>
+          <h3>Responsive Design</h3>
+          <p>
+            Website layouts designed to work across mobile phones,
+            tablets and desktop screens.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">◇</div>
+          <h3>Website Redesign</h3>
+          <p>
+            Refreshing existing website layouts with a cleaner
+            and more modern appearance.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">⚙</div>
+          <h3>Website Updates</h3>
+          <p>
+            Basic content, layout and website maintenance updates
+            based on project requirements.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">◎</div>
+          <h3>Small Business Solutions</h3>
+          <p>
+            Simple digital experiences designed around the needs
+            of small businesses and independent professionals.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Our <span>Work</span></h2>
+
+      <p class="section-intro">
+        We are building our project portfolio.
+        More website demonstrations and design work will
+        be showcased here as they become available.
+      </p>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+          <div class="portfolio-visual">✦</div>
+          <div class="portfolio-info">
+            <div class="demo-label">Concept Project</div>
+            <h3>Small Business Website</h3>
+            <p>
+              A demonstration of a modern website concept
+              for a small business.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-visual">▣</div>
+          <div class="portfolio-info">
+            <div class="demo-label">Coming Soon</div>
+            <h3>Creative Landing Page</h3>
+            <p>
+              A focused landing page concept with a clean
+              layout and responsive design.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-visual">◇</div>
+          <div class="portfolio-info">
+            <div class="demo-label">Coming Soon</div>
+            <h3>Business Web Experience</h3>
+            <p>
+              More website concepts and demonstrations
+              will be added as projects develop.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Build Something <span>Great.</span></h2>
+
+      <p class="section-intro">
+        Have a business that needs a website?
+        We'd love to hear about your project.
+        Get in touch with StartNL Web Studio.
+      </p>
+
+      <a href="mailto:startnlwebstudio@gmail.com" class="btn">
+        Email Us
+      </a>
+
+      <br>
+
+      <a class="email" href="mailto:startnlwebstudio@gmail.com">
+        startnlwebstudio@gmail.com
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 StartNL Web Studio. All rights reserved.
+    <br>
+    Simple Ideas. Strong Digital Beginnings.
+  </div>
+</footer>
+
+</body>
+</html>
